@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cedywwmy7dqhi"
+=======
+uid="uid://dxgarhar2u677"
+>>>>>>> 4c1ff8508c8525dade05f5a92fbb80a96b78a784
 path="res://.godot/imported/UI_Flat_ButtonCheck01a.png-8cf02f363c91d3fcd4d3b2f0fa6aa220.ctex"
 metadata={
 "vram_texture": false

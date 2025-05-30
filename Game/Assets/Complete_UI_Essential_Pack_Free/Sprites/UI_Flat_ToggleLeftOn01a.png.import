@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dirh5one7uwsk"
+=======
+uid="uid://cxj6qnauq3ths"
+>>>>>>> 4c1ff8508c8525dade05f5a92fbb80a96b78a784
 path="res://.godot/imported/UI_Flat_ToggleLeftOn01a.png-0535a7295d9df25800188d4b8c2716b6.ctex"
 metadata={
 "vram_texture": false

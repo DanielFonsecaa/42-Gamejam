@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ihwhjec51weo"
+=======
+uid="uid://bf4gtshpscqcq"
+>>>>>>> 4c1ff8508c8525dade05f5a92fbb80a96b78a784
 path="res://.godot/imported/UI_Flat_FrameSlot03b.png-bed3e679d8de5e506f66d24b13c39c35.ctex"
 metadata={
 "vram_texture": false
