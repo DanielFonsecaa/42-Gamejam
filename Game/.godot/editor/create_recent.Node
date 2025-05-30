@@ -1,0 +1,9 @@
+AnimatedSprite2D
+Panel
+TextEdit
+TouchScreenButton
+TextureButton
+Control
+CanvasLayer
+TextureRect
+MenuBar
