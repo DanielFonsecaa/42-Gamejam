@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://befnb17ldckdf"]
+[gd_scene load_steps=2 format=3 uid="uid://cq84ylffjpxqp"]
 
-[ext_resource type="Texture2D" uid="uid://qo2layt6gt2w" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/UI_Flat_Button02a_1.png" id="1_0kpiu"]
+[ext_resource type="Texture2D" uid="uid://2jfctuhfuhah" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/UI_Flat_Button02a_1.png" id="1_0kpiu"]
 
 [node name="Button" type="Control"]
 layout_mode = 3

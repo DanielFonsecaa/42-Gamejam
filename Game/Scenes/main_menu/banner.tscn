@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://da4iqp6426j48"]
+[gd_scene load_steps=2 format=3 uid="uid://bfgt73qsg0wr5"]
 
-[ext_resource type="Texture2D" uid="uid://bq8bid4okn83p" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/UI_Flat_Banner01a.png" id="1_hwfg8"]
+[ext_resource type="Texture2D" uid="uid://cs7vvekc4jckg" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/UI_Flat_Banner01a.png" id="1_hwfg8"]
 
 [node name="Banner" type="Control"]
 layout_mode = 3

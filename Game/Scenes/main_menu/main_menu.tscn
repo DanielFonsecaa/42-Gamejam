@@ -1,9 +1,195 @@
-[gd_scene format=3 uid="uid://pw805j8wgxbn"]
+[gd_scene load_steps=9 format=3 uid="uid://d3od6tfbxasgi"]
+
+[ext_resource type="FontFile" uid="uid://bryrwbejwsyfq" path="res://Assets/Jacquard12-Regular.ttf" id="1_84ntq"]
+[ext_resource type="Texture2D" uid="uid://dw6pi4vwdouvq" path="res://Assets/menubackground.png" id="1_p16ft"]
+
+[sub_resource type="GDScript" id="GDScript_p16ft"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/loading/loading1.tscn\")
+
+
+func _on_option_pressed() -> void:
+	print(\"options pressed\")
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thuob"]
+texture = ExtResource("1_p16ft")
+modulate_color = Color(0.139745, 0.0833529, 0.0110416, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thuob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfl82"]
+bg_color = Color(0.926759, 0.739535, 0.681164, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2.355)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep757"]
+bg_color = Color(0.678064, 0.575677, 0.434953, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2.355)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjrrv"]
+bg_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2.355)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_p16ft")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_thuob")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -52.0
+offset_right = 155.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_colors/font_color = Color(0.33607, 0.17087, 0.0148671, 1)
+theme_override_colors/font_focus_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_colors/font_pressed_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("1_84ntq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = SubResource("StyleBoxEmpty_thuob")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cfl82")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ep757")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjrrv")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_colors/font_color = Color(0.33607, 0.17087, 0.0148671, 1)
+theme_override_colors/font_focus_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_colors/font_pressed_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("1_84ntq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = SubResource("StyleBoxEmpty_thuob")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cfl82")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ep757")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjrrv")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_colors/font_color = Color(0.33607, 0.17087, 0.0148671, 1)
+theme_override_colors/font_focus_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_colors/font_pressed_color = Color(0.337255, 0.172549, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("1_84ntq")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/focus = SubResource("StyleBoxEmpty_thuob")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cfl82")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ep757")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjrrv")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -266.0
+offset_right = 298.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.860269, 0.427212, 0.0960006, 1)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("1_84ntq")
+theme_override_font_sizes/font_size = 83
+text = "Alquimista Safadinha"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -150.0
+offset_right = 167.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.860269, 0.427212, 0.0960006, 1)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("1_84ntq")
+theme_override_font_sizes/font_size = 83
+text = "Rui Sucks"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

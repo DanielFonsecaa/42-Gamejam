@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 res://Scenes/Tileset.tscn
-=======
-res://Scenes/button.tscn
+res://Scenes/main_menu/main_menu.tscn
 res://Scenes/main_menu/banner.tscn
-res://Scenes/loading.tscn
-res://Scenes/loading2.tscn
-res://Scenes/loading3.tscn
-res://Scenes/sun_timer.tscn
-res://Scenes/loading/loading3.tscn
-res://Scenes/loading/loading2.tscn
+res://Scenes/main_menu/button.tscn
+res://Scenes/Main.tscn
 res://Scenes/loading/loading1.tscn
->>>>>>> 4c1ff8508c8525dade05f5a92fbb80a96b78a784
+res://Scenes/loading/loading2.tscn
+res://Scenes/loading/loading3.tscn
+res://Scenes/sun_timer.tscn

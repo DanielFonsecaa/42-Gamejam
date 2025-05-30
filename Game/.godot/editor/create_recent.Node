@@ -1,8 +1,10 @@
-<<<<<<< HEAD
-TileMapLayer
-=======
-AnimatedSprite2D
+Camera2D
+Label
 Panel
+VBoxContainer
+Button
+TileMapLayer
+AnimatedSprite2D
 TextEdit
 TouchScreenButton
 TextureButton
@@ -10,4 +12,3 @@ Control
 CanvasLayer
 TextureRect
 MenuBar
->>>>>>> 4c1ff8508c8525dade05f5a92fbb80a96b78a784
