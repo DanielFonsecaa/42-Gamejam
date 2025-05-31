@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cxqqte05cwmfd"]
+[gd_scene load_steps=21 format=3 uid="uid://cxqqte05cwmfd"]
 
 [ext_resource type="Texture2D" uid="uid://dkmo3412u5a1s" path="res://Assets/clients/MiniOldMan.png" id="1_du88n"]
+[ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_bugp1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nex3c"]
 atlas = ExtResource("1_du88n")
@@ -144,6 +145,7 @@ radius = 5.09902
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
+scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"lay_down"
 autoplay = "idle"
@@ -151,6 +153,7 @@ frame_progress = 1.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 10)
+script = ExtResource("2_bugp1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CharacterBody2D"]
 shape = SubResource("CircleShape2D_k10ht")

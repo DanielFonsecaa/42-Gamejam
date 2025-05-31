@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dror2id2maed6"]
+
+[ext_resource type="Script" uid="uid://bufe2h7e7bmks" path="res://Scenes/enemy/enemy.gd" id="1_swltt"]
+
+[node name="enemy" type="Node2D"]
+script = ExtResource("1_swltt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
