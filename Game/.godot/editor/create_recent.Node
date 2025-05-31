@@ -1,6 +1,8 @@
+Camera2D
+AnimationPlayer
+Control
 AnimatedSprite2D
 Panel
-Camera2D
 CharacterBody2D
 CollisionShape2D
 AnimatableBody2D
@@ -10,5 +12,3 @@ Button
 TileMapLayer
 TextEdit
 TouchScreenButton
-TextureButton
-Control

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwj2twqj558i3"]
+
+[ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="1_rrrc0"]
+[ext_resource type="PackedScene" uid="uid://dujq0x8jpn77j" path="res://Scenes/client/player_test.tscn" id="2_vmpge"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -2)
+
+[node name="map" parent="." instance=ExtResource("1_rrrc0")]
+position = Vector2(-32, -270)
+scale = Vector2(1.665, 1.665)
+
+[node name="player_test" parent="." instance=ExtResource("2_vmpge")]
+position = Vector2(34, 5)
+scale = Vector2(4.019, 4.019)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
