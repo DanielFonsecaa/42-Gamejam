@@ -18,8 +18,12 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_pressed() -> void:
+<<<<<<< Updated upstream
 #	get_tree().change_scene_to_file(\"res://Scenes/Intro.tscn\")
 	get_tree().change_scene_to_file(\"res://Scenes/Main.tscn\")
+=======
+	get_tree().change_scene_to_file(\"res://Scenes/text_box/Intro.tscn\")
+>>>>>>> Stashed changes
 
 func _on_option_pressed() -> void:
 	print(\"options pressed\")

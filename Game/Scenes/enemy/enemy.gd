@@ -37,7 +37,7 @@ func spawn_client() -> void:
 		print("Checking bed:", bed.name, "occupied?", bed.is_occupied)
 		if not bed.is_occupied:
 			bed.occupy()
-			client_instance.bed_position = bed.global_position
+da			client_instance.bed_position = bed.global_position
 			client_instance.assigned_bed = bed
 			get_tree().current_scene.add_child(client_instance)
 			return
