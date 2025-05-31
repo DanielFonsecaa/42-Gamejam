@@ -5,8 +5,8 @@ export.cfg
 export_presets.cfg
 
 # Godot 4.x - new cache directories
-.godot/
-.cache/
+Game/.godot/
+Game/.cache/
 
 # OS / Editor / IDE files
 .DS_Store
