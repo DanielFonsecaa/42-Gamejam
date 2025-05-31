@@ -6,9 +6,9 @@ signal closed
 @export var typing_speed := 0.03
 
 var dialogue_lines := [
-	"Ugh... Another day of wasting my precious alchemy on these fools...",
-	"Okay. I need to get ready for the day.",
-	"(You can use 'W', 'A', 'S' and 'D' to move around!)"
+	"Clients are coming in. Check their disease above their head.",
+	"Ater that, head up to your alchemy table and create a potion for that disease!",
+	"(You can use 'E' to interact with the table!)"
 	]
 
 var current_line := 0
