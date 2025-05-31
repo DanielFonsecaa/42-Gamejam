@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1748698279
+::res://::1748706405
 icon.svg::CompressedTexture2D/CompressedTexture2D::8629313970548750813::1748697624::1748697624::1::::<><><>0<>0<>ca7f5f2094d78f82889fd2e08e6a7d1a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+recordmovement.gd::GDScript/GDScript::1253460028998383881::1748704146::0::1::::<>RefCounted<><>0<>0<><>::
 ::res://Assets/::1748697624
 alchemy_01.png::CompressedTexture2D/CompressedTexture2D::4802535229716248662::1748697624::1748697624::1::::<><><>0<>0<>a2ff28f58d7f6c5be74d0520037f9fbf<>res://.godot/imported/alchemy_01.png-7ba93c9ab441d3c853cfb36ac7fda0ee.ctex::
 foreground.png::CompressedTexture2D/CompressedTexture2D::435836063278723349::1748697624::1748697624::1::::<><><>0<>0<>b58eee63abed11f9340146afb6d8d21f<>res://.godot/imported/foreground.png-49f86231f092faee4a63ca1ce37c1c3c.ctex::
@@ -156,13 +157,13 @@ tileset_B.png::CompressedTexture2D/CompressedTexture2D::6003489248124283020::174
 tileset_C.png::CompressedTexture2D/CompressedTexture2D::510786597282414800::1748697624::1748697624::1::::<><><>0<>0<>c537249c4435c50e9e7059d06603675b<>res://.godot/imported/tileset_C.png-4935388069e08200b3c9b24098f4d6c4.ctex::
 tileset_D.png::CompressedTexture2D/CompressedTexture2D::5623288032667314289::1748697624::1748697624::1::::<><><>0<>0<>3f6d2c64fc7c2740f34e0927f954a048<>res://.godot/imported/tileset_D.png-1ba19e9457c9cc3d4cfc54a3f4b83a4c.ctex::
 ::res://Assets/Super_Retro_World_Interior_pack_week42/unity/::1748697624
-::res://Scenes/::1748698246
-Intro.tscn::PackedScene::8723670480472241440::1748698246::0::1::::<><><>0<>0<><>::uid://bnw25o33uej7w::::res://Scenes/map.tscn<>uid://dujq0x8jpn77j::::res://Scenes/client/player_test.tscn
-Main.tscn::PackedScene::2241282514328588250::1748698246::0::1::::<><><>0<>0<><>::uid://bnw25o33uej7w::::res://Scenes/map.tscn<>uid://dujq0x8jpn77j::::res://Scenes/client/player_test.tscn
-map.tscn::PackedScene::3345985674079191514::1748698246::0::1::::<><><>0<>0<><>::uid://cr6dsfhfmxncj::::res://Assets/Super_Retro_World_Interior_pack_week42/atlas_32x.png
+::res://Scenes/::1748706139
+Intro.tscn::PackedScene::7734049901664625147::1748706139::0::1::::<><><>0<>0<><>::uid://bnw25o33uej7w::::res://Scenes/map.tscn<>uid://dkrew8c7kys56::::res://Assets/clients/MiniVillagerWoman.png
+Main.tscn::PackedScene/PackedScene::2241282514328588250::1748703229::0::1::::<><><>0<>0<><>::uid://bnw25o33uej7w::::res://Scenes/map.tscn<>uid://dujq0x8jpn77j::::res://Scenes/client/player_test.tscn
+map.tscn::PackedScene/PackedScene::3345985674079191514::1748698246::0::1::::<><><>0<>0<><>::uid://cr6dsfhfmxncj::::res://Assets/Super_Retro_World_Interior_pack_week42/atlas_32x.png
 sun_timer.tscn::PackedScene/PackedScene::1311759853167692776::1748697624::0::1::::<><><>0<>0<><>::uid://caonb26xgxlow::::res://Assets/alchemy_01.png
-::res://Scenes/client/::1748697624
-character_body_2d.gd::GDScript/GDScript::7006870970640956535::1748697624::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Scenes/client/::1748701966
+character_body_2d.gd::GDScript/GDScript::7006870970640956535::1748701402::0::1::::<>CharacterBody2D<><>0<>0<><>::
 client_noble.tscn::PackedScene/PackedScene::1124594902802359391::1748697624::0::1::::<><><>0<>0<><>::uid://cy8brxt1y4s6i::::res://Assets/clients/MiniNobleMan.png
 client_old_man.tscn::PackedScene/PackedScene::6421220467174484909::1748697624::0::1::::<><><>0<>0<><>::uid://dkmo3412u5a1s::::res://Assets/clients/MiniOldMan.png
 client_old_woman.tscn::PackedScene/PackedScene::2479449759987109869::1748697624::0::1::::<><><>0<>0<><>::uid://c8sjpk125amr3::::res://Assets/clients/MiniOldWoman.png
@@ -170,6 +171,7 @@ client_peasant.tscn::PackedScene/PackedScene::8869615609503805617::1748697624::0
 client_princes.tscn::PackedScene/PackedScene::7813196657449254210::1748697624::0::1::::<><><>0<>0<><>::uid://dos7mjrii3p7x::::res://Assets/clients/MiniPrincess.png
 client_queen.tscn::PackedScene/PackedScene::2863494108061386944::1748697624::0::1::::<><><>0<>0<><>::uid://dxa4gbvaiiojc::::res://Assets/clients/MiniQueen.png
 client_worker.tscn::PackedScene/PackedScene::338005610003996459::1748697624::0::1::::<><><>0<>0<><>::uid://eu8e7ig5jcvj::::res://Assets/clients/MiniWorker.png
+PlayerDummy.tscn::PackedScene/PackedScene::2013783134925773711::1748701966::0::1::::<><><>0<>0<><>::uid://c63ge2gsjsfd4::::res://Scenes/client/character_body_2d.gd<>uid://dkrew8c7kys56::::res://Assets/clients/MiniVillagerWoman.png
 player_test.tscn::PackedScene/PackedScene::8582635699803486593::1748697624::0::1::::<><><>0<>0<><>::uid://dkrew8c7kys56::::res://Assets/clients/MiniVillagerWoman.png<>uid://c63ge2gsjsfd4::::res://Scenes/client/character_body_2d.gd
 ::res://Scenes/loading/::1748697624
 loading1.tscn::PackedScene/PackedScene::6496062983681170494::1748697624::0::1::::<><><>0<>0<><>::uid://caonb26xgxlow::::res://Assets/alchemy_01.png

@@ -1,12 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://digow30hacvwl"]
+[gd_scene load_steps=24 format=3 uid="uid://digow30hacvwl"]
 
 [ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="1_rrrc0"]
-[ext_resource type="PackedScene" uid="uid://cjkexvvll7wce" path="res://Scenes/text_box/message_girl.tscn" id="1_vmpge"]
 [ext_resource type="Texture2D" uid="uid://dkrew8c7kys56" path="res://Assets/clients/MiniVillagerWoman.png" id="2_rrrc0"]
 
 [sub_resource type="Animation" id="Animation_vmpge"]
 resource_name = "Intro"
-length = 10.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -241,12 +240,6 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="MainMenu" parent="." instance=ExtResource("1_vmpge")]
-offset_left = 31.0
-offset_top = 227.0
-offset_right = 31.0
-offset_bottom = 227.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(32, 227)
