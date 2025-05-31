@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cphbmbfff30s0"]
+
+[ext_resource type="Texture2D" uid="uid://cid2r0r0u2c2t" path="res://Assets/ballons/doidoi_2.png" id="1_h3i1w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in6kg"]
+texture = ExtResource("1_h3i1w")
+
+[node name="Fever" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_in6kg")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvwesvefhnjy1"]
+
+[ext_resource type="Texture2D" uid="uid://b4f2s7se5dgp0" path="res://Assets/ballons/bleeding.png" id="1_hxk35"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in6kg"]
+texture = ExtResource("1_hxk35")
+
+[node name="injure" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_in6kg")

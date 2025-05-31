@@ -5,6 +5,7 @@ signal next
 var bed_position: Vector2
 var assigned_bed: Node2D = null
 var reached_bed: bool = false
+var sickness_name: String = ""
 
 func _process(delta: float) -> void:
 	if bed_position and not reached_bed:
@@ -18,6 +19,10 @@ func _process(delta: float) -> void:
 		pass
 
 func _reach_bed() -> void:
+	var offset = Vector2(0, 30)
+	position = bed_position - offset
+	# Disable collision with TileMap
+	collision_mask &= ~1
 	reached_bed = true
 	emit_signal("next")
 	queue_free()
@@ -30,5 +35,7 @@ func _reach_bed() -> void:
 		$AnimationPlayer.play("lay_down")  # Replace "idle" with your animation name
 
 	# Optionally release bed on client removal:
-	if assigned_bed:
-		assigned_bed.release()
+	#if assigned_bed:
+	#	assigned_bed.release()
+	#func enable_collision():
+	#collision_mask |= 1  # Add layer 1 back

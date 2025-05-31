@@ -1,17 +1,14 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 var is_occupied: bool = false
+
+func _ready():
+	add_to_group("bes")  # Add itself when it's ready
 
 func occupy():
 	is_occupied = true
+	print("👉 Bed", name, "occupied")
 
 func release():
 	is_occupied = false
+	print("👈 Bed", name, "released")

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://npqolxnt45tu"]
+
+[ext_resource type="Texture2D" uid="uid://cqi5ip3j6gsu5" path="res://Assets/ballons/Coração-Cristal-Pulso.png" id="1_ehk3k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8bb1"]
+atlas = ExtResource("1_ehk3k")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrdti"]
+atlas = ExtResource("1_ehk3k")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68x2o"]
+atlas = ExtResource("1_ehk3k")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3crd"]
+atlas = ExtResource("1_ehk3k")
+region = Rect2(1024, 1024, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j8r03"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8bb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrdti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68x2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3crd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="poison" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j8r03")
+frame_progress = 0.37789
