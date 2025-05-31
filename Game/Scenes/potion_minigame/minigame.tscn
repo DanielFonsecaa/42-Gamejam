@@ -1,0 +1,252 @@
+[gd_scene load_steps=28 format=3 uid="uid://bbvhvr0u7f3ly"]
+
+[ext_resource type="Texture2D" uid="uid://bpehbomwqkgkl" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/Spritesheet_UI_Flat.png" id="2_7ha7c"]
+[ext_resource type="Script" uid="uid://dxqbbguu6lvkg" path="res://Scenes/potion_minigame/panel.gd" id="2_mqypi"]
+[ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="3_d0205"]
+[ext_resource type="Script" uid="uid://codgv2v3osyik" path="res://Scenes/potion_minigame/drag_object.gd" id="3_mqypi"]
+[ext_resource type="Texture2D" uid="uid://bwa4fw3gpmxfa" path="res://Scenes/potion_minigame/assets/Recipe_Book.png" id="5_d0205"]
+[ext_resource type="Texture2D" uid="uid://h3qtos0janqc" path="res://Scenes/potion_minigame/assets/caldeirao.png" id="6_a2sgh"]
+[ext_resource type="Script" uid="uid://c7vpg7v7wmug7" path="res://Scenes/potion_minigame/slot.gd" id="6_se7hw"]
+[ext_resource type="Script" uid="uid://d0jfibds7adtg" path="res://Scenes/potion_minigame/animated_sprite_2d.gd" id="7_up7r7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ha7c"]
+load_path = "res://.godot/imported/sprite_sheet.png-8d3df191c87b37862d1fcca14e288ee7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up7r7"]
+atlas = SubResource("CompressedTexture2D_7ha7c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ha7c"]
+atlas = SubResource("CompressedTexture2D_7ha7c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqypi"]
+atlas = SubResource("CompressedTexture2D_7ha7c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0205"]
+atlas = ExtResource("2_7ha7c")
+region = Rect2(320, 32, 64, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_up7r7"]
+font = ExtResource("3_d0205")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_se7hw"]
+line_spacing = -4.595
+font = ExtResource("3_d0205")
+font_size = 22
+font_color = Color(0.310617, 0.310617, 0.310617, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2sgh"]
+atlas = ExtResource("5_d0205")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se7hw"]
+atlas = SubResource("AtlasTexture_a2sgh")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckurs"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(0, 0, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgpr6"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(330, 0, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3k6b"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(660, 0, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kij4a"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(990, 0, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkvpp"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(1320, 0, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80c2i"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(0, 320, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0gnv"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(330, 320, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iim2a"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(660, 320, 330, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84h0i"]
+atlas = ExtResource("6_a2sgh")
+region = Rect2(990, 320, 330, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46emj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckurs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgpr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3k6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kij4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkvpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80c2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0gnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iim2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84h0i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 109.0
+offset_right = 600.0
+offset_bottom = 539.0
+
+[node name="drag_object" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 25.0
+offset_right = 87.0
+offset_bottom = 90.0
+scale = Vector2(1.64963, 1.63306)
+texture = SubResource("AtlasTexture_up7r7")
+script = ExtResource("3_mqypi")
+item_name = "Sunny Flower"
+item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
+
+[node name="drag_object2" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 160.0
+offset_right = 87.0
+offset_bottom = 225.0
+scale = Vector2(1.64963, 1.63306)
+texture = SubResource("AtlasTexture_7ha7c")
+script = ExtResource("3_mqypi")
+item_name = "Luminous Mushroom"
+item_description = "Blue mushroom that glows softly in the dark, purifies the body of diseases and can be collected in damp forests and caves"
+
+[node name="drag_object3" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 295.0
+offset_right = 87.0
+offset_bottom = 360.0
+scale = Vector2(1.64963, 1.63306)
+texture = SubResource("AtlasTexture_mqypi")
+script = ExtResource("3_mqypi")
+item_name = "Healing herb"
+item_description = "Bright green leaves with small red healing berries, found in gardens and open fields"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 446.0
+offset_top = 132.0
+offset_right = 455.0
+offset_bottom = 144.0
+script = ExtResource("2_mqypi")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 736.0
+offset_bottom = 289.0
+scale = Vector2(0.5, 0.62522)
+texture = SubResource("AtlasTexture_d0205")
+
+[node name="item_name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 11.0
+offset_right = 57.0
+offset_bottom = 34.0
+text = "Teste"
+label_settings = SubResource("LabelSettings_up7r7")
+
+[node name="item_description" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 42.0
+offset_right = 345.0
+offset_bottom = 2119.0
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+label_settings = SubResource("LabelSettings_se7hw")
+autowrap_mode = 3
+
+[node name="RecipeBook" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 41.0
+offset_right = 37.0
+offset_bottom = 53.0
+script = ExtResource("2_mqypi")
+
+[node name="TextureRect" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
+offset_right = 736.0
+offset_bottom = 600.0
+scale = Vector2(0.48, 0.959999)
+texture = SubResource("AtlasTexture_se7hw")
+
+[node name="recipes_big_title" type="Label" parent="RecipeBook"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 71.0
+offset_bottom = 36.0
+text = "Recipes"
+label_settings = SubResource("LabelSettings_up7r7")
+
+[node name="item_description" type="Label" parent="RecipeBook"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 36.0
+offset_right = 338.0
+offset_bottom = 2113.0
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+label_settings = SubResource("LabelSettings_se7hw")
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 234.0
+offset_right = 919.0
+offset_bottom = 424.0
+script = ExtResource("6_se7hw")
+type = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(91, 89)
+scale = Vector2(0.560002, 0.560002)
+sprite_frames = SubResource("SpriteFrames_46emj")
+frame_progress = 0.887847
+script = ExtResource("7_up7r7")
