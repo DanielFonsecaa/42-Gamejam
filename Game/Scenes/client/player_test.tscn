@@ -139,11 +139,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k10ht"]
-radius = 5.09902
+radius = 3.0
 
 [node name="player_test" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 1
 position = Vector2(7, 0)
 script = ExtResource("1_x4iit")
 
@@ -155,5 +156,5 @@ autoplay = "idle"
 frame_progress = 0.814741
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_k10ht")
