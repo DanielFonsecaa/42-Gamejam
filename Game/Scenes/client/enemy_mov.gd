@@ -5,6 +5,7 @@ extends CharacterBody2D  # Or Node2D if no physics
 var bed_position: Vector2
 var assigned_bed: Node2D = null
 var reached_bed: bool = false
+var sickness_name: String = ""
 
 func _process(delta: float) -> void:
 	if bed_position and not reached_bed:

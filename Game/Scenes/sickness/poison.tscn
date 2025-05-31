@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnr21euqaceql"]
+
+[ext_resource type="Texture2D" uid="uid://bmh8etawebeov" path="res://Assets/ballons/bleeh.png" id="1_abslm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4lcps"]
+texture = ExtResource("1_abslm")
+
+[node name="poison" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4lcps")
