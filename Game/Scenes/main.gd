@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var arrow = $AnimatedSprite2D
 
 func _ready():	
 	await get_tree().process_frame  # ensures everything is ready first
@@ -20,3 +21,5 @@ func _ready():
 	overlay2.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	await overlay2.closed
 	get_tree().paused = false
+	arrow.visible = true
+	
