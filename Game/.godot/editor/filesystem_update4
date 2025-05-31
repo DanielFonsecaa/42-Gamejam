@@ -1,3 +1,8 @@
 res://Scenes/Intro.tscn
+res://Scenes/intro.gd
 res://Scenes/Main.tscn
-res://Scenes/map.tscn
+res://Scenes/animation_player.gd
+res://Scenes/client/character_body_2d.gd
+res://Scenes/client/PlayerDummy.tscn
+res://recordmovement.gd
+res://Scenes/node_2d.gd
