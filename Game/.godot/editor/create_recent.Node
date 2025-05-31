@@ -1,3 +1,4 @@
+
 Node2D
 Timer
 CollisionShape2D
@@ -5,8 +6,10 @@ TileMapLayer
 Label
 Camera2D
 AnimationPlayer
+Node2D
+Node
 Control
-AnimatedSprite2D
+Camera2D
 Panel
 CharacterBody2D
 AnimatableBody2D
