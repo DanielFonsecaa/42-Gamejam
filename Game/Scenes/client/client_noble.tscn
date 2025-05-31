@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://qa06cj1yhq8f"]
+[gd_scene load_steps=21 format=3 uid="uid://qa06cj1yhq8f"]
 
 [ext_resource type="Texture2D" uid="uid://cy8brxt1y4s6i" path="res://Assets/clients/MiniNobleMan.png" id="1_jtkp2"]
+[ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_2cy0i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cy0i"]
 atlas = ExtResource("1_jtkp2")
@@ -144,6 +145,7 @@ radius = 5.09902
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7, -10)
+scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"lay_down"
 autoplay = "idle"
@@ -151,6 +153,7 @@ frame_progress = 1.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 10)
+script = ExtResource("2_2cy0i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CharacterBody2D"]
 shape = SubResource("CircleShape2D_k10ht")

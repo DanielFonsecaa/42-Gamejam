@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://bg2dlhary8b17"]
+[gd_scene load_steps=21 format=3 uid="uid://bg2dlhary8b17"]
 
 [ext_resource type="Texture2D" uid="uid://dxa4gbvaiiojc" path="res://Assets/clients/MiniQueen.png" id="1_4k8q5"]
+[ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_c68g5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c68g5"]
 atlas = ExtResource("1_4k8q5")
@@ -139,12 +140,14 @@ radius = 5.09902
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
+scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="AnimatedSprite2D"]
 position = Vector2(0, 10)
+script = ExtResource("2_c68g5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CharacterBody2D"]
 shape = SubResource("CircleShape2D_k10ht")

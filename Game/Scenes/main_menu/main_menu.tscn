@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d3od6tfbxasgi"]
 
-[ext_resource type="FontFile" uid="uid://bryrwbejwsyfq" path="res://Assets/Jacquard12-Regular.ttf" id="1_84ntq"]
+[ext_resource type="FontFile" uid="uid://bryrwbejwsyfq" path="res://Assets/fonts/Jacquard12-Regular.ttf" id="1_84ntq"]
 [ext_resource type="Texture2D" uid="uid://dw6pi4vwdouvq" path="res://Assets/menubackground.png" id="1_p16ft"]
 [ext_resource type="Texture2D" uid="uid://ghefkwwjsg2h" path="res://Assets/foreground.png" id="2_thuob"]
 

@@ -1,4 +1,10 @@
-AnimatedSprite2D
+
+Node2D
+Timer
+CollisionShape2D
+TileMapLayer
+Label
+Camera2D
 AnimationPlayer
 Node2D
 Node
@@ -6,9 +12,7 @@ Control
 Camera2D
 Panel
 CharacterBody2D
-CollisionShape2D
 AnimatableBody2D
-Label
 VBoxContainer
 Button
-TileMapLayer
+TextEdit

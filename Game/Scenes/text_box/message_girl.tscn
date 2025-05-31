@@ -1,6 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjkexvvll7wce"]
+[gd_scene load_steps=8 format=3 uid="uid://cjkexvvll7wce"]
 
 [ext_resource type="Texture2D" uid="uid://m80l7wb513u5" path="res://Assets/text_girl.png" id="1_oj7o3"]
+[ext_resource type="Texture2D" uid="uid://brxwcrk34ieng" path="res://Assets/paper_01.png" id="1_whuwa"]
+[ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="2_v8eyq"]
 
 [sub_resource type="GDScript" id="GDScript_p16ft"]
 script/source = "extends Control
@@ -27,71 +29,18 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4a8x6"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(0, 0, 256, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_whuwa"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(256, 0, 256, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8eyq"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(512, 0, 256, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cm7l2"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(768, 0, 256, 360)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm7l2"]
+texture = ExtResource("1_whuwa")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frjff"]
 atlas = ExtResource("1_oj7o3")
-region = Rect2(1024, 0, 256, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6leaa"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(0, 360, 256, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_itiiq"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(256, 360, 256, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycing"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(512, 360, 256, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_356ht"]
-atlas = ExtResource("1_oj7o3")
-region = Rect2(768, 360, 256, 360)
+region = Rect2(0, 0, 256, 360)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fqj31"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4a8x6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_whuwa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v8eyq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cm7l2")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_frjff")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6leaa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_itiiq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ycing")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_356ht")
 }],
 "loop": true,
 "name": &"default",
@@ -118,9 +67,27 @@ anchor_bottom = 1.0
 offset_top = -215.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cm7l2")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 264.0
+offset_top = -174.0
+offset_right = -69.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.576892, 0.323239, 0.129262, 1)
+theme_override_fonts/font = ExtResource("2_v8eyq")
+theme_override_font_sizes/font_size = 35
+text = "Rui eh um vagabundo!!!!!!!!!!!!"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(133, 484)
 scale = Vector2(1.00818, 0.923964)
 sprite_frames = SubResource("SpriteFrames_fqj31")
-frame_progress = 0.407752
+frame_progress = 0.651114

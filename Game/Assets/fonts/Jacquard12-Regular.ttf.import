@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bryrwbejwsyfq"
-path="res://.godot/imported/Jacquard12-Regular.ttf-b6c222efb4ebcb2083ad969deb1e25d4.fontdata"
+path="res://.godot/imported/Jacquard12-Regular.ttf-3b5ccb6f75b3b7be3dfd3b6dc554e82a.fontdata"
 
 [deps]
 
-source_file="res://Assets/Jacquard12-Regular.ttf"
-dest_files=["res://.godot/imported/Jacquard12-Regular.ttf-b6c222efb4ebcb2083ad969deb1e25d4.fontdata"]
+source_file="res://Assets/fonts/Jacquard12-Regular.ttf"
+dest_files=["res://.godot/imported/Jacquard12-Regular.ttf-3b5ccb6f75b3b7be3dfd3b6dc554e82a.fontdata"]
 
 [params]
 
