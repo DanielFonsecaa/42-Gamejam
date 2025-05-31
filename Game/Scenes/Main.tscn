@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://r02fsqqewbqv" path="res://Scenes/beds/bed_03.tscn" id="5_50glp"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(547, 97)
+position = Vector2(0, 7)
 script = ExtResource("1_jw32o")
 
 [node name="Camera2D" type="Camera2D" parent="."]

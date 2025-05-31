@@ -14,31 +14,24 @@ var client_scenes = [
 
 func _process(delta: float) -> void:
 	pass
-var beds: Array = []
 func _ready() -> void:
 	call_deferred("_init_beds")
 	$Timer.timeout.connect(spawn_client)
 
 func _init_beds():
-	beds = get_tree().get_nodes_in_group("bes")
-	print("Beds found in group 'bes': ", beds.size())
-	for bed in beds:
-		print("Bed found:", bed.name)
+	var found_beds = get_tree().get_nodes_in_group("bes")
+	BedManager.beds = found_beds
 
 func spawn_client() -> void:
-	print("Spawning client... Beds available:", beds.size())
-
-	var rand_index = randi() % client_scenes.size()
-	var client_instance = client_scenes[rand_index].instantiate()    
-	client_instance.position = Vector2(70, 400)
-
-	for bed in beds:
-		print("Checking bed:", bed.name, "occupied?", bed.is_occupied)
+	for bed in BedManager.beds:
 		if not bed.is_occupied:
 			bed.occupy()
+			var rand_index = randi() % client_scenes.size()
+			var client_instance = client_scenes[rand_index].instantiate()
+			client_instance.position = Vector2(70, 400)  # spawn start pos
+			print("Assigning bed_position:", bed.global_position)
 			client_instance.bed_position = bed.global_position
 			client_instance.assigned_bed = bed
 			get_tree().current_scene.add_child(client_instance)
 			return
-
-	print("❌ No available beds!")
+	print("❌ No available beds, not spawning new client.")

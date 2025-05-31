@@ -15,6 +15,10 @@ run/main_scene="uid://d3od6tfbxasgi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+BedManager="*res://Scenes/bedManager.gd"
+
 [display]
 
 window/stretch/mode="viewport"
