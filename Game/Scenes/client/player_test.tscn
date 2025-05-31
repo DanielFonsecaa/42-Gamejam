@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dkrew8c7kys56" path="res://Assets/clients/MiniVillagerWoman.png" id="1_esj4f"]
 [ext_resource type="Script" uid="uid://c63ge2gsjsfd4" path="res://Scenes/client/character_body_2d.gd" id="1_x4iit"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k10ht"]
-radius = 5.09902
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_x4iit"]
 atlas = ExtResource("1_esj4f")
 region = Rect2(32, 96, 32, 32)
@@ -141,14 +138,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k10ht"]
+radius = 5.09902
+
 [node name="player_test" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(7, 0)
 script = ExtResource("1_x4iit")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_k10ht")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -10)
@@ -156,3 +153,7 @@ sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.814741
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_k10ht")
