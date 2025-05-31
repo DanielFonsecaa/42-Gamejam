@@ -1,6 +1,17 @@
-[gd_scene format=3 uid="uid://66xuipyjq2a5"]
+[gd_scene load_steps=3 format=3 uid="uid://66xuipyjq2a5"]
+
+[ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/Tileset.tscn" id="1_idj7w"]
+[ext_resource type="PackedScene" uid="uid://dujq0x8jpn77j" path="res://Scenes/client/player_test.tscn" id="2_idj7w"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, -2)
+
+[node name="map" parent="." instance=ExtResource("1_idj7w")]
+position = Vector2(-32, -270)
+scale = Vector2(1.665, 1.665)
+
+[node name="player_test" parent="." instance=ExtResource("2_idj7w")]
+position = Vector2(38, 5)
+scale = Vector2(5.52947, 5.52947)
