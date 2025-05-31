@@ -1,5 +1,4 @@
 extends Node2D
-
 @export var spawn_interval: float = 3.0  # seconds between spawns
 var timer: float = 0.0
 

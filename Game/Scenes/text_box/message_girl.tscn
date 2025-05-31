@@ -1,34 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjkexvvll7wce"]
+[gd_scene load_steps=8 format=3 uid="uid://cjkexvvll7wce"]
 
 [ext_resource type="Texture2D" uid="uid://m80l7wb513u5" path="res://Assets/text_girl.png" id="1_oj7o3"]
 [ext_resource type="Texture2D" uid="uid://brxwcrk34ieng" path="res://Assets/paper_01.png" id="1_whuwa"]
 [ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="2_v8eyq"]
 [ext_resource type="Script" uid="uid://dc8u2666j4ih4" path="res://Scenes/text_box/label.gd" id="3_v8eyq"]
-
-[sub_resource type="GDScript" id="GDScript_p16ft"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://Scenes/Main.tscn\")
-
-
-func _on_option_pressed() -> void:
-	print(\"options pressed\")
-
-
-func _on_exit_pressed() -> void:
-	get_tree().quit()
-"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm7l2"]
 texture = ExtResource("1_whuwa")
@@ -49,6 +24,7 @@ animations = [{
 }]
 
 [node name="Message" type="Control"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,49 +33,46 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_p16ft")
+scale = Vector2(0.932313, 0.932313)
+script = ExtResource("3_v8eyq")
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -215.0
+offset_top = 427.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_cm7l2")
 
 [node name="Label" type="Label" parent="Panel2"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 264.0
-offset_top = -174.0
-offset_right = -69.0
-offset_bottom = -46.0
+offset_left = 255.0
+offset_top = 36.0
+offset_right = -89.0
+offset_bottom = -30.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.576892, 0.323239, 0.129262, 1)
 theme_override_fonts/font = ExtResource("2_v8eyq")
 theme_override_font_sizes/font_size = 35
-script = ExtResource("3_v8eyq")
 
 [node name="SpaceHint" type="Label" parent="Panel2"]
 visible = false
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 264.0
-offset_top = -174.0
-offset_right = -69.0
-offset_bottom = -46.0
+offset_left = -35.0
+offset_top = -22.0
+offset_right = -35.0
+offset_bottom = -22.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.576892, 0.323239, 0.129262, 1)
 theme_override_fonts/font = ExtResource("2_v8eyq")
 theme_override_font_sizes/font_size = 35
