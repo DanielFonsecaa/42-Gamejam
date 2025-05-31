@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-res://Scenes/Intro Cutscene.tscn
-=======
-res://Scenes/player/player.tscn
-res://Scenes/player/playground.tscn
-res://Scenes/Tileset.tscn
-res://Scenes/Main.tscn
-res://Scenes/client/client_noble.tscn
-res://Scenes/client/player_test.tscn
 res://Scenes/main_menu/main_menu.tscn
-res://Scenes/client/character_body_2d.gd
->>>>>>> refs/remotes/origin/main
+res://Scenes/client/client_worker.tscn
+res://Scenes/client/player_test.tscn
+res://Scenes/text_box/message_girl.tscn
+res://Scenes/Main.tscn

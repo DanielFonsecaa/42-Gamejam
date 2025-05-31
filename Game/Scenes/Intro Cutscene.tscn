@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cek0nm2u2gg6x"]
-
-[ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/Tileset.tscn" id="1_klc5c"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="map" parent="." instance=ExtResource("1_klc5c")]

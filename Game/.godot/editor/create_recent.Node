@@ -1,8 +1,8 @@
+AnimatedSprite2D
 Panel
 Camera2D
 CharacterBody2D
 CollisionShape2D
-AnimatedSprite2D
 AnimatableBody2D
 Label
 VBoxContainer
