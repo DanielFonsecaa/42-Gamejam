@@ -18,6 +18,10 @@ func _process(delta: float) -> void:
 		pass
 
 func _reach_bed() -> void:
+	var offset = Vector2(0, 30)
+	position = bed_position - offset
+	# Disable collision with TileMap
+	collision_mask &= ~1
 	reached_bed = true
 	
 	# Stop movement:
@@ -28,5 +32,7 @@ func _reach_bed() -> void:
 		$AnimationPlayer.play("lay_down")  # Replace "idle" with your animation name
 
 	# Optionally release bed on client removal:
-	if assigned_bed:
-		assigned_bed.release()
+	#if assigned_bed:
+	#	assigned_bed.release()
+	#func enable_collision():
+	#collision_mask |= 1  # Add layer 1 back
