@@ -6,7 +6,8 @@ signal closed
 @export var typing_speed := 0.03
 
 var dialogue_lines := [
-	"Ugh... Another day of wasting my precious alchemy on these fools...",
+	"Ugh... Another day of wasting my precious alchemy 
+	on these fools...",
 	"Okay. I need to get ready for the day.",
 	"(You can use 'W', 'A', 'S' and 'D' to move around!)"
 	]
