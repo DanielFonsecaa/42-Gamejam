@@ -1,5 +1,2 @@
-res://Scenes/main_menu/main_menu.tscn
-res://Scenes/client/client_worker.tscn
-res://Scenes/client/player_test.tscn
+res://Scenes/map.tscn
 res://Scenes/text_box/message_girl.tscn
-res://Scenes/Main.tscn

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uu18kat6vc22"
-path="res://.godot/imported/PC Computer - Kamidori Alchemy Meister - Serawi Elf Princess.png-3a5bfaba6602dd615dc133e0104d97a2.ctex"
+uid="uid://m80l7wb513u5"
+path="res://.godot/imported/text_girl.png-9a7e8b571372c5bbcb0eef73fdd2c12e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PC Computer - Kamidori Alchemy Meister - Serawi Elf Princess.png"
-dest_files=["res://.godot/imported/PC Computer - Kamidori Alchemy Meister - Serawi Elf Princess.png-3a5bfaba6602dd615dc133e0104d97a2.ctex"]
+source_file="res://Assets/text_girl.png"
+dest_files=["res://.godot/imported/text_girl.png-9a7e8b571372c5bbcb0eef73fdd2c12e.ctex"]
 
 [params]
 

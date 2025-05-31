@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjkexvvll7wce"]
+[gd_scene load_steps=13 format=3 uid="uid://cjkexvvll7wce"]
 
-[ext_resource type="Texture2D" uid="uid://dw6pi4vwdouvq" path="res://Assets/menubackground.png" id="1_hfmiq"]
-[ext_resource type="Texture2D" uid="uid://uu18kat6vc22" path="res://Assets/PC Computer - Kamidori Alchemy Meister - Serawi Elf Princess.png" id="2_4a8x6"]
+[ext_resource type="Texture2D" uid="uid://m80l7wb513u5" path="res://Assets/text_girl.png" id="1_oj7o3"]
 
 [sub_resource type="GDScript" id="GDScript_p16ft"]
 script/source = "extends Control
@@ -28,49 +27,48 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 "
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thuob"]
-texture = ExtResource("1_hfmiq")
-modulate_color = Color(0.139745, 0.0833529, 0.0110416, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a8x6"]
+atlas = ExtResource("1_oj7o3")
+region = Rect2(0, 0, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_whuwa"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(5, 3, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(256, 0, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8eyq"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(407, 3, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(512, 0, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cm7l2"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(809, 3, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(768, 0, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frjff"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(1211, 3, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(1024, 0, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6leaa"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(1613, 3, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(0, 360, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itiiq"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(5, 570, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(256, 360, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ycing"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(407, 570, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(512, 360, 256, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_356ht"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(809, 570, 402, 567)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gjcy"]
-atlas = ExtResource("2_4a8x6")
-region = Rect2(1211, 570, 402, 567)
+atlas = ExtResource("1_oj7o3")
+region = Rect2(768, 360, 256, 360)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fqj31"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a8x6")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_whuwa")
 }, {
@@ -94,9 +92,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_356ht")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gjcy")
 }],
 "loop": true,
 "name": &"default",
@@ -114,27 +109,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_p16ft")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_thuob")
-
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -121.0
+offset_top = -215.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(122, 505)
-scale = Vector2(0.539801, 0.494709)
+position = Vector2(133, 484)
+scale = Vector2(1.00818, 0.923964)
 sprite_frames = SubResource("SpriteFrames_fqj31")
 frame_progress = 0.407752
