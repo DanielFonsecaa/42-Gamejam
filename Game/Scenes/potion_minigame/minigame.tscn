@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbvhvr0u7f3ly"]
+
+[ext_resource type="Texture2D" uid="uid://cj3kyybyf81l1" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/Spritesheet_UI_Flat_Animated.png" id="1_k03cn"]
+[ext_resource type="Script" uid="uid://c7vpg7v7wmug7" path="res://Scenes/potion_minigame/slot.gd" id="2_7ha7c"]
+[ext_resource type="Texture2D" uid="uid://c1awennh5xae7" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/UI_Flat_ButtonCheck01a.png" id="3_d0205"]
+[ext_resource type="Script" uid="uid://codgv2v3osyik" path="res://Scenes/potion_minigame/drag_object.gd" id="3_mqypi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swmkl"]
+atlas = ExtResource("1_k03cn")
+region = Rect2(96.0406, 63.9145, 32.1693, 32.2622)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2sgh"]
+atlas = ExtResource("3_d0205")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="slot1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 65.0
+scale = Vector2(1.00314, 0.993063)
+texture = SubResource("AtlasTexture_swmkl")
+script = ExtResource("2_7ha7c")
+type = 1
+
+[node name="slot2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 52.0
+offset_right = 280.0
+offset_bottom = 92.0
+scale = Vector2(1.00314, 0.993063)
+texture = SubResource("AtlasTexture_swmkl")
+script = ExtResource("2_7ha7c")
+type = 1
+
+[node name="slot3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 98.0
+offset_right = 233.0
+offset_bottom = 138.0
+scale = Vector2(1.00314, 0.993063)
+texture = SubResource("AtlasTexture_swmkl")
+script = ExtResource("2_7ha7c")
+type = 1
+
+[node name="slot4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 98.0
+offset_right = 280.0
+offset_bottom = 138.0
+scale = Vector2(1.00314, 0.993063)
+texture = SubResource("AtlasTexture_swmkl")
+script = ExtResource("2_7ha7c")
+type = 1
+
+[node name="drag_object" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 65.0
+scale = Vector2(1.00314, 0.993063)
+texture = SubResource("AtlasTexture_a2sgh")
+script = ExtResource("3_mqypi")
