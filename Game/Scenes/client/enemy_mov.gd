@@ -1,5 +1,4 @@
 extends CharacterBody2D  # Or Node2D if no physics
-signal next
 @export var speed: float = 50.0
 
 var bed_position: Vector2
@@ -24,8 +23,6 @@ func _reach_bed() -> void:
 	# Disable collision with TileMap
 	collision_mask &= ~1
 	reached_bed = true
-	emit_signal("next")
-	queue_free()
 	
 	# Stop movement:
 	velocity = Vector2.ZERO  # If using CharacterBody2D's velocity

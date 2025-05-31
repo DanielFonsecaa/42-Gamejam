@@ -260,15 +260,16 @@ script = ExtResource("1_jw32o")
 position = Vector2(32, 227)
 zoom = Vector2(1.19, 1.27)
 
-[node name="map" parent="." instance=ExtResource("1_idj7w")]
-
 [node name="player_test" parent="." instance=ExtResource("2_idj7w")]
 z_index = 1
 position = Vector2(62, 423)
 scale = Vector2(4.019, 4.019)
 
 [node name="enemy" parent="." instance=ExtResource("3_kln2b")]
+z_index = 1
 position = Vector2(-189, 371)
+
+[node name="map" parent="." instance=ExtResource("1_idj7w")]
 
 [node name="Bed01" parent="." instance=ExtResource("4_v1gob")]
 position = Vector2(281, 359)
