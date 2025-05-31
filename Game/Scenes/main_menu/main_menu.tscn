@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3od6tfbxasgi"]
+[gd_scene load_steps=11 format=3 uid="uid://d3od6tfbxasgi"]
 
 [ext_resource type="FontFile" uid="uid://bryrwbejwsyfq" path="res://Assets/Jacquard12-Regular.ttf" id="1_84ntq"]
 [ext_resource type="Texture2D" uid="uid://dw6pi4vwdouvq" path="res://Assets/menubackground.png" id="1_p16ft"]
+[ext_resource type="Texture2D" uid="uid://ghefkwwjsg2h" path="res://Assets/foreground.png" id="2_thuob"]
 
 [sub_resource type="GDScript" id="GDScript_p16ft"]
 script/source = "extends Control
@@ -31,6 +32,9 @@ func _on_exit_pressed() -> void:
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thuob"]
 texture = ExtResource("1_p16ft")
 modulate_color = Color(0.139745, 0.0833529, 0.0110416, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfl82"]
+texture = ExtResource("2_thuob")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_thuob"]
 
@@ -83,6 +87,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_thuob")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cfl82")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
