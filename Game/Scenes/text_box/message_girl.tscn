@@ -47,7 +47,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MainMenu" type="Control"]
+[node name="Message" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -2665,11 +2665,11 @@ texture = ExtResource("1_xac3t")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_q6ei5")
 
-[node name="Bed01" type="Node2D"]
+[node name="Bed01" type="Node2D" groups=["bes"]]
 scale = Vector2(1.385, 1.385)
 script = ExtResource("1_t348p")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["bes"]]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-66, -57)
 tile_map_data = PackedByteArray("AAADAAIAAAAQAB0AAAADAAMAAAAQAB4AAAADAAQAAAAQAB8AAAAEAAIAAAARAB0AAAAEAAMAAAARAB4AAAAEAAQAAAARAB8AAAA=")
 tile_set = SubResource("TileSet_25rmm")

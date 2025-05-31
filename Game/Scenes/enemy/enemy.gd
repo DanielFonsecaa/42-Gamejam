@@ -39,7 +39,7 @@ func spawn_client() -> void:
 			bed.occupy()
 			client_instance.bed_position = bed.global_position
 			client_instance.assigned_bed = bed
+			get_tree().current_scene.add_child(client_instance)
 			return
 
 	print("❌ No available beds!")
-	get_tree().current_scene.add_child(client_instance)

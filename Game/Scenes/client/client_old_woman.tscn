@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://c8sjpk125amr3" path="res://Assets/clients/MiniOldWoman.png" id="1_s8bpe"]
 [ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_cjy0c"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k10ht"]
+radius = 5.09902
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wc3ia"]
 atlas = ExtResource("1_s8bpe")
 region = Rect2(32, 96, 32, 32)
@@ -138,10 +141,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k10ht"]
-radius = 5.09902
+[node name="Client" type="CharacterBody2D"]
+script = ExtResource("2_cjy0c")
 
-[node name="Client" type="Node2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 30.19)
+scale = Vector2(4.019, 4.019)
+shape = SubResource("CircleShape2D_k10ht")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
@@ -150,10 +156,3 @@ sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"lay_down"
 autoplay = "idle"
 frame_progress = 1.0
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 10)
-script = ExtResource("2_cjy0c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CharacterBody2D"]
-shape = SubResource("CircleShape2D_k10ht")

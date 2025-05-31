@@ -141,19 +141,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_k10ht"]
 radius = 5.09902
 
-[node name="Client" type="Node2D"]
+[node name="Client" type="CharacterBody2D"]
+script = ExtResource("2_2cy0i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(7, -10)
 scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
-animation = &"lay_down"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 1.0
+frame_progress = 0.434113
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 10)
-script = ExtResource("2_2cy0i")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 30.19)
+scale = Vector2(4.019, 4.019)
 shape = SubResource("CircleShape2D_k10ht")
