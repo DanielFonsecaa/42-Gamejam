@@ -41,5 +41,8 @@ animations = [{
 [node name="poison" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-28, 33)
+scale = Vector2(0.0371094, 0.0371094)
 sprite_frames = SubResource("SpriteFrames_j8r03")
+autoplay = "default"
 frame_progress = 0.0803647

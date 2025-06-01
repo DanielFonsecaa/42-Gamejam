@@ -5,7 +5,8 @@ var flag = true
 var item_textures := {
 	1: preload("res://Scenes/potion_minigame/assets/potions/fever_potion.png") as Texture2D,
 	2: preload("res://Scenes/potion_minigame/assets/potions/simple_antidote.png") as Texture2D,
-	3: preload("res://Scenes/potion_minigame/assets/potions/healing_potion.png") as Texture2D
+	3: preload("res://Scenes/potion_minigame/assets/potions/healing_potion.png") as Texture2D,
+	4: preload("res://Scenes/potion_minigame/assets/potions/invisble.png") as Texture2D
 }
 
 func _ready():	
@@ -54,13 +55,15 @@ func _on_got_potion():
 	await overlay3.closed
 	get_tree().paused = false
 	
-func _input(event):
-		if event.is_action_pressed("ui_1"):
-			change_inventory_item(1)
-		elif event.is_action_pressed("ui_2"):
-			change_inventory_item(2)
-		elif event.is_action_pressed("ui_3"):
-			change_inventory_item(3)
+func add():
+	if Inventory.potion_id == 1:
+		change_inventory_item(1)
+	if Inventory.potion_id == 2:
+		change_inventory_item(3)
+	if Inventory.potion_id == 3:
+		change_inventory_item(2)
+	if Inventory.potion_id == -1:
+		change_inventory_item(4)
 
 func change_inventory_item(index: int):
 		if item_textures.has(index):
@@ -72,3 +75,4 @@ func _process(delta: float) -> void:
 		_on_got_potion()
 		Inventory.hasitem = false
 		flag = false
+	add()
