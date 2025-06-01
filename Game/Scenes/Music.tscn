@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh7qnrqxwxpkl"]
+
+[ext_resource type="AudioStream" uid="uid://irpetsmwi3s0" path="res://SFX/ost.mp3" id="1_fghhr"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_fghhr")
+volume_db = -18.0
+autoplay = true

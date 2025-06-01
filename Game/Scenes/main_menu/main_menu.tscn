@@ -220,10 +220,11 @@ vertical_alignment = 1
 
 [node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_cfl82")
-volume_db = -16.0
+volume_db = -10.0
 
 [node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ep757")
+volume_db = -10.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
