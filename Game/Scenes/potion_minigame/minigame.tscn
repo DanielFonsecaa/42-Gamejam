@@ -138,6 +138,7 @@ offset_bottom = 90.0
 scale = Vector2(1.64963, 1.63306)
 texture = SubResource("AtlasTexture_up7r7")
 script = ExtResource("3_mqypi")
+item_id = "sunny_flower"
 item_name = "Sunny Flower"
 item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
 
@@ -150,6 +151,7 @@ offset_bottom = 225.0
 scale = Vector2(1.64963, 1.63306)
 texture = SubResource("AtlasTexture_7ha7c")
 script = ExtResource("3_mqypi")
+item_id = "luminous_mushroom"
 item_name = "Luminous Mushroom"
 item_description = "Blue mushroom that glows softly in the dark, purifies the body of diseases and can be collected in damp forests and caves"
 
@@ -162,11 +164,13 @@ offset_bottom = 360.0
 scale = Vector2(1.64963, 1.63306)
 texture = SubResource("AtlasTexture_mqypi")
 script = ExtResource("3_mqypi")
+item_id = "healing_herb"
 item_name = "Healing herb"
 item_description = "Bright green leaves with small red healing berries, found in gardens and open fields"
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
+z_index = 5
 layout_mode = 0
 offset_left = 446.0
 offset_top = 132.0

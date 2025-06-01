@@ -1,11 +1,12 @@
 extends TextureRect
 
+@export var item_id: String = ""
 @export var item_name: String = ""
 @export var item_description: String = ""
 @onready var panel: Panel = $"../../Panel"
 
 func _get_drag_data(at_position: Vector2) -> Variant:
-	var data = [self, 1]
+	var data = [self, 1, item_id]
 	var preview = TextureRect.new()
 	preview.texture = self.texture
 	set_drag_preview(preview)
