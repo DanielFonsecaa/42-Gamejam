@@ -1,13 +1,23 @@
-[gd_scene load_steps=28 format=3 uid="uid://bbvhvr0u7f3ly"]
+[gd_scene load_steps=49 format=3 uid="uid://bbvhvr0u7f3ly"]
 
+[ext_resource type="Script" uid="uid://bame47d12tc6g" path="res://Scenes/potion_minigame/minigame.gd" id="1_q3k6b"]
 [ext_resource type="Texture2D" uid="uid://bpehbomwqkgkl" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/Spritesheet_UI_Flat.png" id="2_7ha7c"]
 [ext_resource type="Script" uid="uid://dxqbbguu6lvkg" path="res://Scenes/potion_minigame/panel.gd" id="2_mqypi"]
 [ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="3_d0205"]
 [ext_resource type="Script" uid="uid://codgv2v3osyik" path="res://Scenes/potion_minigame/drag_object.gd" id="3_mqypi"]
 [ext_resource type="Texture2D" uid="uid://bwa4fw3gpmxfa" path="res://Scenes/potion_minigame/assets/Recipe_Book.png" id="5_d0205"]
 [ext_resource type="Texture2D" uid="uid://h3qtos0janqc" path="res://Scenes/potion_minigame/assets/caldeirao.png" id="6_a2sgh"]
+[ext_resource type="Texture2D" uid="uid://bg7sxgk2vijtm" path="res://Scenes/potion_minigame/assets/illnesses.png" id="6_ckurs"]
 [ext_resource type="Script" uid="uid://c7vpg7v7wmug7" path="res://Scenes/potion_minigame/slot.gd" id="6_se7hw"]
+[ext_resource type="Texture2D" uid="uid://bpcy0on011o0o" path="res://Scenes/potion_minigame/assets/sprite_sheet.png" id="7_cgpr6"]
 [ext_resource type="Script" uid="uid://d0jfibds7adtg" path="res://Scenes/potion_minigame/animated_sprite_2d.gd" id="7_up7r7"]
+[ext_resource type="Script" uid="uid://cpj0g78wgl1rg" path="res://Scenes/potion_minigame/texture_button.gd" id="12_kij4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2sgh"]
+atlas = ExtResource("5_d0205")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se7hw"]
+atlas = SubResource("AtlasTexture_a2sgh")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ha7c"]
 load_path = "res://.godot/imported/sprite_sheet.png-8d3df191c87b37862d1fcca14e288ee7.ctex"
@@ -16,13 +26,20 @@ load_path = "res://.godot/imported/sprite_sheet.png-8d3df191c87b37862d1fcca14e28
 atlas = SubResource("CompressedTexture2D_7ha7c")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_se7hw"]
+load_path = "res://.godot/imported/sprite_sheet.png-8d3df191c87b37862d1fcca14e288ee7.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ha7c"]
-atlas = SubResource("CompressedTexture2D_7ha7c")
+atlas = SubResource("CompressedTexture2D_se7hw")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqypi"]
-atlas = SubResource("CompressedTexture2D_7ha7c")
+atlas = SubResource("CompressedTexture2D_se7hw")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46emj"]
+atlas = SubResource("CompressedTexture2D_se7hw")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0205"]
 atlas = ExtResource("2_7ha7c")
@@ -30,7 +47,7 @@ region = Rect2(320, 32, 64, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_up7r7"]
 font = ExtResource("3_d0205")
-font_size = 30
+font_size = 35
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_se7hw"]
@@ -39,11 +56,62 @@ font = ExtResource("3_d0205")
 font_size = 22
 font_color = Color(0.310617, 0.310617, 0.310617, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a2sgh"]
-atlas = ExtResource("5_d0205")
+[sub_resource type="LabelSettings" id="LabelSettings_cgpr6"]
+font = ExtResource("3_d0205")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_se7hw"]
-atlas = SubResource("AtlasTexture_a2sgh")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u21hc"]
+atlas = ExtResource("6_ckurs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2wsu"]
+atlas = ExtResource("6_ckurs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t86xo"]
+atlas = ExtResource("6_ckurs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yybb2"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7d2w"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbaxk"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og5g4"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emaum"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilnk6"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v232"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl3jo"]
+atlas = ExtResource("7_cgpr6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7fdh"]
+atlas = ExtResource("6_ckurs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r70g"]
+atlas = ExtResource("6_ckurs")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ckurs"]
 atlas = ExtResource("6_a2sgh")
@@ -116,6 +184,10 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ran"]
+atlas = ExtResource("2_7ha7c")
+region = Rect2(647, 168, 17, 16)
+
 [node name="Control" type="Control"]
 z_index = 20
 layout_mode = 3
@@ -125,6 +197,7 @@ offset_top = 10.0
 offset_right = -334.0
 offset_bottom = 50.0
 scale = Vector2(0.684566, 0.684566)
+script = ExtResource("1_q3k6b")
 
 [node name="Panel3" type="Panel" parent="."]
 layout_mode = 0
@@ -142,6 +215,15 @@ offset_right = -500.488
 offset_bottom = -90.0097
 scale = Vector2(62.5232, 26.2418)
 
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+offset_left = 420.705
+offset_top = 40.9018
+offset_right = 1270.7
+offset_bottom = 640.902
+scale = Vector2(0.772156, 0.959999)
+texture = SubResource("AtlasTexture_se7hw")
+
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 450.0
@@ -151,16 +233,17 @@ offset_bottom = 539.0
 
 [node name="drag_object" type="TextureRect" parent="Panel2"]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 25.0
-offset_right = 87.0
-offset_bottom = 90.0
+offset_left = 20.371
+offset_top = 23.9309
+offset_right = 85.371
+offset_bottom = 88.9309
 scale = Vector2(1.64963, 1.63306)
 texture = SubResource("AtlasTexture_up7r7")
 script = ExtResource("3_mqypi")
 item_id = "sunny_flower"
 item_name = "Sunny Flower"
 item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
+draggable = true
 
 [node name="drag_object2" type="TextureRect" parent="Panel2"]
 layout_mode = 0
@@ -174,6 +257,7 @@ script = ExtResource("3_mqypi")
 item_id = "luminous_mushroom"
 item_name = "Luminous Mushroom"
 item_description = "Blue mushroom that glows softly in the dark, purifies the body of diseases and can be collected in damp forests and caves"
+draggable = true
 
 [node name="drag_object3" type="TextureRect" parent="Panel2"]
 layout_mode = 0
@@ -187,6 +271,7 @@ script = ExtResource("3_mqypi")
 item_id = "healing_herb"
 item_name = "Healing herb"
 item_description = "Bright green leaves with small red healing berries, found in gardens and open fields"
+draggable = true
 
 [node name="Output" type="Panel" parent="."]
 layout_mode = 0
@@ -203,7 +288,7 @@ offset_top = 25.0
 offset_right = 87.0
 offset_bottom = 90.0
 scale = Vector2(1.64963, 1.63306)
-texture = SubResource("AtlasTexture_up7r7")
+texture = SubResource("AtlasTexture_46emj")
 script = ExtResource("3_mqypi")
 item_id = "sunny_flower"
 item_name = "Sunny Flower"
@@ -257,26 +342,301 @@ script = ExtResource("2_mqypi")
 
 [node name="TextureRect" type="TextureRect" parent="RecipeBook"]
 layout_mode = 0
-offset_right = 736.0
-offset_bottom = 600.0
+offset_left = -25.0784
+offset_top = -0.0981751
+offset_right = 824.922
+offset_bottom = 599.902
 scale = Vector2(0.48, 0.959999)
 texture = SubResource("AtlasTexture_se7hw")
 
 [node name="recipes_big_title" type="Label" parent="RecipeBook"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 5.0
-offset_right = 71.0
-offset_bottom = 36.0
-text = "Recipes"
+offset_left = -7.54903
+offset_top = 10.1273
+offset_right = 149.451
+offset_bottom = 46.1273
+text = "Potion Table"
 label_settings = SubResource("LabelSettings_up7r7")
 
+[node name="afflictions" type="Label" parent="RecipeBook"]
+layout_mode = 0
+offset_left = -7.54903
+offset_top = 58.333
+offset_right = 149.451
+offset_bottom = 94.333
+text = "Afflictions"
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="drag_object" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
+offset_left = -7.54908
+offset_top = 96.3132
+offset_right = 24.4509
+offset_bottom = 128.313
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_u21hc")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Fever"
+item_description = "Needs \"Fever Heal Potion\". Characterized by high temperature, weakness, and excessive sweating, caused by exposure to cold or extreme exhaustion."
+
+[node name="drag_object2" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
+offset_left = 153.137
+offset_top = 96.3133
+offset_right = 185.137
+offset_bottom = 128.313
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_r2wsu")
+script = ExtResource("3_mqypi")
+item_id = "poisoning "
+item_name = "Needs \"Antidote\". Mild Poisoning"
+item_description = "Causes nausea, dizziness, and stomach pain, originating from the consumption of spoiled food or poisonous plants."
+
+[node name="drag_object3" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
+offset_left = 77.1761
+offset_top = 96.3133
+offset_right = 109.176
+offset_bottom = 128.313
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_t86xo")
+script = ExtResource("3_mqypi")
+item_id = "infected_wounds"
+item_name = "Infected Wounds"
+item_description = "Needs \"Healing Potion\". Manifests as cuts that do not heal, presence of pus, and intense pain, resulting from poorly treated injuries or combat"
+
+[node name="recipes" type="Label" parent="RecipeBook"]
+layout_mode = 0
+offset_left = -7.54906
+offset_top = 175.195
+offset_right = 149.451
+offset_bottom = 211.195
+text = "Recipes"
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="fever_potion" type="TextureRect" parent="RecipeBook"]
+offset_left = 16.0686
+offset_top = 229.244
+offset_right = 48.0686
+offset_bottom = 261.244
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_yybb2")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Fever Healing Potion"
+item_description = "A cool, blue potion designed to reduce high fevers. Drinking it soothes the body, lowers temperature, and helps the user recover from fever-related ailments."
+
+[node name="recipes2" type="Label" parent="RecipeBook"]
+offset_left = 89.1075
+offset_top = 243.852
+offset_right = 246.107
+offset_bottom = 279.852
+text = "="
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="lum_mush" type="TextureRect" parent="RecipeBook"]
+offset_left = 109.558
+offset_top = 229.244
+offset_right = 141.558
+offset_bottom = 261.244
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_i7d2w")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Luminous Mushroom"
+item_description = "Blue mushroom that glows softly in the dark, purifies the body of diseases and can be collected in damp forests and caves"
+
+[node name="recipes3" type="Label" parent="RecipeBook"]
+offset_left = 178.215
+offset_top = 243.852
+offset_right = 335.215
+offset_bottom = 279.852
+text = "+"
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="sunny_flower" type="TextureRect" parent="RecipeBook"]
+offset_left = 198.666
+offset_top = 229.244
+offset_right = 230.666
+offset_bottom = 261.244
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_hbaxk")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Sunny Flower"
+item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
+
+[node name="fever_potion2" type="TextureRect" parent="RecipeBook"]
+offset_left = 15.8234
+offset_top = 315.332
+offset_right = 47.8234
+offset_bottom = 347.332
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_og5g4")
+script = ExtResource("3_mqypi")
+item_id = "healing_potion"
+item_name = "Healing Potion"
+item_description = "A cool, blue potion designed to reduce high fevers. Drinking it soothes the body, lowers temperature, and helps the user recover from fever-related ailments."
+
+[node name="recipes4" type="Label" parent="RecipeBook"]
+offset_left = 88.8624
+offset_top = 329.94
+offset_right = 245.862
+offset_bottom = 365.94
+text = "="
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="lum_mush2" type="TextureRect" parent="RecipeBook"]
+offset_left = 109.313
+offset_top = 315.332
+offset_right = 141.313
+offset_bottom = 347.332
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_emaum")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Healing Herb"
+item_description = "Characterized by high temperature, weakness, and excessive sweating, caused by exposure to cold or extreme exhaustion."
+
+[node name="recipes5" type="Label" parent="RecipeBook"]
+offset_left = 177.97
+offset_top = 329.94
+offset_right = 334.97
+offset_bottom = 365.94
+text = "+"
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="sunny_flower2" type="TextureRect" parent="RecipeBook"]
+offset_left = 198.421
+offset_top = 315.332
+offset_right = 230.421
+offset_bottom = 347.332
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_hbaxk")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Sunny Flower"
+item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
+
+[node name="fever_potion3" type="TextureRect" parent="RecipeBook"]
+offset_left = 15.8234
+offset_top = 404.44
+offset_right = 47.8234
+offset_bottom = 436.44
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_ilnk6")
+script = ExtResource("3_mqypi")
+item_id = "antidote"
+item_name = "Antidote"
+item_description = "A bitter-tasting liquid that neutralizes poisons in the body. This antidote quickly removes the effects of toxins, allowing the user to recover from poisoning."
+
+[node name="recipes6" type="Label" parent="RecipeBook"]
+offset_left = 88.8624
+offset_top = 419.047
+offset_right = 245.862
+offset_bottom = 455.047
+text = "="
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="lum_mush3" type="TextureRect" parent="RecipeBook"]
+offset_left = 109.313
+offset_top = 404.44
+offset_right = 141.313
+offset_bottom = 436.44
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_8v232")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Healing Herb"
+item_description = "Bright green leaves with small red healing berries, found in gardens and open fields"
+
+[node name="recipes7" type="Label" parent="RecipeBook"]
+offset_left = 177.97
+offset_top = 419.047
+offset_right = 334.97
+offset_bottom = 455.047
+text = "+"
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="sunny_flower3" type="TextureRect" parent="RecipeBook"]
+offset_left = 198.421
+offset_top = 404.44
+offset_right = 230.421
+offset_bottom = 436.44
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_hbaxk")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Sunny Flower"
+item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
+
+[node name="recipes8" type="Label" parent="RecipeBook"]
+offset_left = 267.323
+offset_top = 419.047
+offset_right = 424.323
+offset_bottom = 455.047
+text = "+"
+label_settings = SubResource("LabelSettings_cgpr6")
+
+[node name="sunny_flower4" type="TextureRect" parent="RecipeBook"]
+offset_left = 287.774
+offset_top = 404.44
+offset_right = 319.774
+offset_bottom = 436.44
+scale = Vector2(1.94475, 1.92522)
+texture = SubResource("AtlasTexture_vl3jo")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Luminous Mushroom"
+item_description = "Blue mushroom that glows softly in the dark, purifies the body of diseases and can be collected in damp forests and caves"
+
+[node name="drag_object4" type="TextureRect" parent="RecipeBook"]
+offset_left = -11.9314
+offset_top = 213.176
+offset_right = 20.0686
+offset_bottom = 245.176
+scale = Vector2(1.47256, 1.45777)
+texture = SubResource("AtlasTexture_u21hc")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Fever"
+item_description = "Needs \"Fever Heal Potion\". Characterized by high temperature, weakness, and excessive sweating, caused by exposure to cold or extreme exhaustion."
+tooltip = false
+
+[node name="drag_object5" type="TextureRect" parent="RecipeBook"]
+offset_left = -11.9314
+offset_top = 297.901
+offset_right = 20.0686
+offset_bottom = 329.901
+scale = Vector2(1.47256, 1.45777)
+texture = SubResource("AtlasTexture_y7fdh")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Fever"
+item_description = "Needs \"Fever Heal Potion\". Characterized by high temperature, weakness, and excessive sweating, caused by exposure to cold or extreme exhaustion."
+tooltip = false
+
+[node name="drag_object6" type="TextureRect" parent="RecipeBook"]
+offset_left = -11.9314
+offset_top = 387.008
+offset_right = 20.0686
+offset_bottom = 419.008
+scale = Vector2(1.47256, 1.45777)
+texture = SubResource("AtlasTexture_2r70g")
+script = ExtResource("3_mqypi")
+item_id = "fever"
+item_name = "Fever"
+item_description = "Needs \"Fever Heal Potion\". Characterized by high temperature, weakness, and excessive sweating, caused by exposure to cold or extreme exhaustion."
+tooltip = false
+
 [node name="item_description" type="Label" parent="RecipeBook"]
+visible = false
 layout_mode = 0
 offset_left = 8.0
-offset_top = 36.0
+offset_top = 227.783
 offset_right = 338.0
-offset_bottom = 2113.0
+offset_bottom = 2304.78
 text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 label_settings = SubResource("LabelSettings_se7hw")
 autowrap_mode = 3
@@ -296,3 +656,13 @@ scale = Vector2(0.560002, 0.560002)
 sprite_frames = SubResource("SpriteFrames_46emj")
 frame_progress = 0.887847
 script = ExtResource("7_up7r7")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1070.75
+offset_top = 46.7449
+offset_right = 1087.75
+offset_bottom = 62.7449
+scale = Vector2(3.04509, 3.04509)
+texture_normal = SubResource("AtlasTexture_e6ran")
+script = ExtResource("12_kij4a")

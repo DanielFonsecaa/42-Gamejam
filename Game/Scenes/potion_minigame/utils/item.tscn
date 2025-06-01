@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dayt07i3de88k"]
+
+[ext_resource type="Script" uid="uid://codgv2v3osyik" path="res://Scenes/potion_minigame/drag_object.gd" id="1_x1hhi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ckurs"]
+load_path = "res://.godot/imported/sprite_sheet.png-8d3df191c87b37862d1fcca14e288ee7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2wsu"]
+atlas = SubResource("CompressedTexture2D_ckurs")
+region = Rect2(32, 0, 32, 32)
+
+[node name="drag_object" type="TextureRect"]
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(1.64963, 1.63306)
+texture = SubResource("AtlasTexture_r2wsu")
+script = ExtResource("1_x1hhi")
+item_id = "sunny_flower"
+item_name = "Sunny Flower"
+item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
