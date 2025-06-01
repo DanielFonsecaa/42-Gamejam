@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://ccv37ll470ohn"]
+[gd_resource type="AudioBusLayout" load_steps=0 format=3 uid="uid://ccv37ll470ohn"]
 
 [resource]
 bus/1/name = &"Step"

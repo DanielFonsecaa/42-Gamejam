@@ -1,7 +1,7 @@
 extends Area2D
-
-@export var scene_to_instantiate: PackedScene
+signal started
 var player_nearby = false
+var first_time = false
 
 func _ready():
 	body_entered.connect(_on_body_entered)
@@ -17,6 +17,9 @@ func _on_body_exited(body):
 
 func _input(event):
 	if player_nearby and event.is_action_pressed("interact"):
-		if scene_to_instantiate:
-			var instance = scene_to_instantiate.instantiate()
-			get_tree().current_scene.add_child(instance)
+		if first_time:
+			var minigame = load("res://Scenes/potion_minigame/minigame.tscn").instantiate()
+			get_tree().current_scene.add_child(minigame)
+			
+		emit_signal("started")
+		first_time = true

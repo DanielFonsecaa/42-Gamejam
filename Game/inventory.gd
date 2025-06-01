@@ -1,6 +1,6 @@
 extends Node
 signal inventory_updated
-
+var hasitem = false
 var current_item: Texture2D = null
 var item_count: int = 0
 
