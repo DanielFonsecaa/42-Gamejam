@@ -1,6 +1,11 @@
 extends TextureRect
 
 @export_enum("Circle", "Square") var type = 0
+
+
+@onready var potion_item: TextureRect = $"../Output/drag_object"
+
+
 var usd_items = 0
 
 var dropped_items := []
@@ -11,6 +16,24 @@ const RECIPES = {
 	"healing_potion": ["healing_herb", "sunny_flower"],
 	"fever_heal_potion": ["luminous_mushroom", "sunny_flower"],
 	"antidote": ["healing_herb", "sunny_flower", "luminous_mushroom"]
+}
+
+const itens = {
+	"healing_potion": {
+		"name": "Poção de Vida",
+		"description": "Recupera 50 de HP.",
+		"region": Rect2(0, 0, 32, 32)
+	},
+	"fever_heal_potion": {
+		"name": "Espada Curta",
+		"description": "Uma espada básica.",
+		"region": Rect2(32, 0, 32, 32)
+	},
+	"antidote": {
+		"name": "Espada Curta",
+		"description": "Uma espada básica.",
+		"region": Rect2(32, 0, 32, 32)
+	}
 }
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
@@ -44,5 +67,6 @@ func _check_recipe():
 
 func _on_recipe_completed(recipe_name):
 	print("Receita criada: %s" % recipe_name)
+	potion_item.visible = true
 	# Aqui pode adicionar lógica para mostrar feedback, criar o item, etc.
 	# dropped_items.clear()
