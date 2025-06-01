@@ -13,7 +13,6 @@ config_version=5
 config/name="New Game Project"
 run/main_scene="uid://d3od6tfbxasgi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
