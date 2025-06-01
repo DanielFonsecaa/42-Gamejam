@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://diwmq4j1gjkon"]
+[gd_scene load_steps=9 format=3 uid="uid://diwmq4j1gjkon"]
 
 [ext_resource type="Script" uid="uid://xnqj5khjhb0y" path="res://Scenes/text_box/message_girl_3.gd" id="1_s1e5r"]
 [ext_resource type="Texture2D" uid="uid://brxwcrk34ieng" path="res://Assets/paper_01.png" id="2_5snex"]
 [ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="3_n78e7"]
 [ext_resource type="Texture2D" uid="uid://m80l7wb513u5" path="res://Assets/text_girl.png" id="4_uxrqp"]
+[ext_resource type="AudioStream" uid="uid://b4mg4c4yv2ia1" path="res://SFX/mumble.mp3" id="5_5snex"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm7l2"]
 texture = ExtResource("2_5snex")
@@ -87,3 +88,7 @@ position = Vector2(133, 484)
 scale = Vector2(1.00818, 0.923964)
 sprite_frames = SubResource("SpriteFrames_fqj31")
 frame_progress = 0.651114
+
+[node name="mumble" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5snex")
+volume_db = -10.0

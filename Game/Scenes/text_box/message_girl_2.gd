@@ -17,6 +17,7 @@ var is_typing := false
 var skip_typing := false
 
 func _ready():
+	$mumble.play()
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	set_process_unhandled_input(true)
 	space_hint.visible = false
