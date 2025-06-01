@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bg2dlhary8b17"]
+[gd_scene load_steps=22 format=3 uid="uid://bg2dlhary8b17"]
 
 [ext_resource type="Texture2D" uid="uid://dxa4gbvaiiojc" path="res://Assets/clients/MiniQueen.png" id="1_4k8q5"]
 [ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_c68g5"]
@@ -136,6 +136,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c68g5"]
+radius = 38.0
+
 [node name="Client" type="CharacterBody2D"]
 script = ExtResource("2_c68g5")
 
@@ -150,3 +153,9 @@ scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="intereactArea" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1, 30)
+shape = SubResource("CircleShape2D_c68g5")

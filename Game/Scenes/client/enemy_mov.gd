@@ -4,18 +4,66 @@ extends CharacterBody2D  # Or Node2D if no physics
 var bed_position: Vector2
 var assigned_bed: Node2D = null
 var reached_bed: bool = false
+var healed: bool = false
 var sickness_name: String = ""
+var moving_to_exit: bool = false
+var end_pos: Vector2 = Vector2(70, 400)
+var player_in_range: bool = false
+var sickness_icon: Node = null
+var healthy_animation_scene: PackedScene = null
 
-func _process(delta: float) -> void:
+var sickness_to_texture := {
+	"fever": preload("res://Scenes/potion_minigame/assets/potions/fever_potion.png"),
+	"poison": preload("res://Scenes/potion_minigame/assets/potions/simple_antidote.png"),
+	"injure": preload("res://Scenes/potion_minigame/assets/potions/healing_potion.png")
+}
+
+func _ready():
+	add_to_group("clients")
+	$InteractionArea.body_entered.connect(_on_body_entered)
+	$InteractionArea.body_exited.connect(_on_body_exited)
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		player_in_range = true
+
+func _on_body_exited(body):
+	if body.name == "Player":
+		player_in_range = false
+
+func _process(delta):
+	if player_in_range and Input.is_action_just_pressed("interact") and not healed:
+		try_heal()
+	
 	if bed_position and not reached_bed:
 		var direction = (bed_position - position).normalized()
 		position += direction * speed * delta
-
 		if position.distance_to(bed_position) < 5:
 			_reach_bed()
-	elif reached_bed:
-		# Stay still, animation is playing
-		pass
+	elif reached_bed and moving_to_exit:
+		var direction = (end_pos - position).normalized()
+		position += direction * speed * delta
+		if position.distance_to(end_pos) < 5:
+			moving_to_exit = false
+
+func try_heal():
+	var current_item = Inventory.current_item
+	if current_item == null:
+		print("❌ No potion selected.")
+		return
+
+	if sickness_to_texture.has(sickness_name):
+		var correct_texture = sickness_to_texture[sickness_name]
+		if current_item == correct_texture:
+			print("✅ Correct potion! Healing client.")
+			Inventory.item_count -= 1
+			if Inventory.item_count <= 0:
+				Inventory.current_item = null
+			heal_client()
+		else:
+			print("❌ Wrong potion.")
+	else:
+		print("❌ Unknown sickness.")
 
 func _reach_bed() -> void:
 	var offset = Vector2(0, 30)
@@ -31,8 +79,35 @@ func _reach_bed() -> void:
 	if has_node("AnimationPlayer"):
 		$AnimationPlayer.play("lay_down")  # Replace "idle" with your animation name
 
-	# Optionally release bed on client removal:
-	#if assigned_bed:
-	#	assigned_bed.release()
-	#func enable_collision():
-	#collision_mask |= 1  # Add layer 1 back
+func heal_client() -> void:
+	# Remove sickness icon if it exists
+	if sickness_icon and sickness_icon.is_inside_tree():
+		sickness_icon.queue_free()
+		sickness_icon = null
+	
+	# Add healing animation if we have the scene
+	if healthy_animation_scene:
+		var heal_anim_instance = healthy_animation_scene.instantiate()
+		add_child(heal_anim_instance)
+		heal_anim_instance.position = Vector2.ZERO  # Adjust as needed
+	
+		# Play healing animation
+		if heal_anim_instance.has_node("AnimationPlayer"):
+			heal_anim_instance.get_node("AnimationPlayer").play("heal")
+		elif heal_anim_instance.has_node("AnimatedSprite2D"):
+			heal_anim_instance.get_node("AnimatedSprite2D").play("heal")
+	
+		# Wait for animation duration
+		await get_tree().create_timer(3.0).timeout
+	
+		heal_anim_instance.queue_free()
+	
+	healed = true
+	
+	if assigned_bed:
+		assigned_bed.release()
+	
+	if has_node("AnimationPlayer"):
+		$AnimationPlayer.play("get_up")
+	
+	moving_to_exit = true
