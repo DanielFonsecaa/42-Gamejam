@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dujq0x8jpn77j"]
+[gd_scene load_steps=21 format=3 uid="uid://ds5s8dd6fk43i"]
 
 [ext_resource type="Texture2D" uid="uid://dkrew8c7kys56" path="res://Assets/clients/MiniVillagerWoman.png" id="1_esj4f"]
 [ext_resource type="Script" uid="uid://c63ge2gsjsfd4" path="res://Scenes/client/character_body_2d.gd" id="1_x4iit"]

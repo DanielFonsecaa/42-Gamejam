@@ -1,6 +1,5 @@
 extends TextureRect
-signal closed
-signal nextstep
+signal gotpotion
 @export var item_id: String = ""
 @export var item_name: String = ""
 @export var item_description: String = ""
@@ -61,6 +60,6 @@ func claim_potion():
 	# Coloque aqui a ação desejada ao usar a poção
 	# TODO: Add to inventory
 	print("Got potion!")
-	emit_signal("closed")
-	emit_signal("nextstep")
+	emit_signal("gotpotion")
+	Inventory.hasitem = true
 	$"../..".queue_free()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=49 format=3 uid="uid://bbvhvr0u7f3ly"]
 
-[ext_resource type="Script" uid="uid://bame47d12tc6g" path="res://Scenes/potion_minigame/minigame.gd" id="1_q3k6b"]
+[ext_resource type="Script" uid="uid://etb2oixgd660" path="res://Scenes/potion_minigame/minigame.gd" id="1_q3k6b"]
 [ext_resource type="Texture2D" uid="uid://bpehbomwqkgkl" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/Spritesheet_UI_Flat.png" id="2_7ha7c"]
 [ext_resource type="Script" uid="uid://dxqbbguu6lvkg" path="res://Scenes/potion_minigame/panel.gd" id="2_mqypi"]
 [ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="3_d0205"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://c7vpg7v7wmug7" path="res://Scenes/potion_minigame/slot.gd" id="6_se7hw"]
 [ext_resource type="Texture2D" uid="uid://bpcy0on011o0o" path="res://Scenes/potion_minigame/assets/sprite_sheet.png" id="7_cgpr6"]
 [ext_resource type="Script" uid="uid://d0jfibds7adtg" path="res://Scenes/potion_minigame/animated_sprite_2d.gd" id="7_up7r7"]
-[ext_resource type="Script" uid="uid://cpj0g78wgl1rg" path="res://Scenes/potion_minigame/texture_button.gd" id="12_kij4a"]
+[ext_resource type="Script" path="res://Scenes/potion_minigame/texture_button.gd" id="12_kij4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2sgh"]
 atlas = ExtResource("5_d0205")
@@ -217,6 +217,7 @@ scale = Vector2(62.5232, 26.2418)
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 420.705
 offset_top = 40.9018
 offset_right = 1270.7
@@ -416,6 +417,7 @@ text = "Recipes"
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="fever_potion" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 16.0686
 offset_top = 229.244
 offset_right = 48.0686
@@ -428,6 +430,7 @@ item_name = "Fever Healing Potion"
 item_description = "A cool, blue potion designed to reduce high fevers. Drinking it soothes the body, lowers temperature, and helps the user recover from fever-related ailments."
 
 [node name="recipes2" type="Label" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 89.1075
 offset_top = 243.852
 offset_right = 246.107
@@ -436,6 +439,7 @@ text = "="
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="lum_mush" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 109.558
 offset_top = 229.244
 offset_right = 141.558
@@ -448,6 +452,7 @@ item_name = "Luminous Mushroom"
 item_description = "Blue mushroom that glows softly in the dark, purifies the body of diseases and can be collected in damp forests and caves"
 
 [node name="recipes3" type="Label" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 178.215
 offset_top = 243.852
 offset_right = 335.215
@@ -456,6 +461,7 @@ text = "+"
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="sunny_flower" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 198.666
 offset_top = 229.244
 offset_right = 230.666
@@ -468,6 +474,7 @@ item_name = "Sunny Flower"
 item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
 
 [node name="fever_potion2" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 15.8234
 offset_top = 315.332
 offset_right = 47.8234
@@ -480,6 +487,7 @@ item_name = "Healing Potion"
 item_description = "A cool, blue potion designed to reduce high fevers. Drinking it soothes the body, lowers temperature, and helps the user recover from fever-related ailments."
 
 [node name="recipes4" type="Label" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 88.8624
 offset_top = 329.94
 offset_right = 245.862
@@ -488,6 +496,7 @@ text = "="
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="lum_mush2" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 109.313
 offset_top = 315.332
 offset_right = 141.313
@@ -500,6 +509,7 @@ item_name = "Healing Herb"
 item_description = "Characterized by high temperature, weakness, and excessive sweating, caused by exposure to cold or extreme exhaustion."
 
 [node name="recipes5" type="Label" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 177.97
 offset_top = 329.94
 offset_right = 334.97
@@ -508,6 +518,7 @@ text = "+"
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="sunny_flower2" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 198.421
 offset_top = 315.332
 offset_right = 230.421
@@ -520,6 +531,7 @@ item_name = "Sunny Flower"
 item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
 
 [node name="fever_potion3" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 15.8234
 offset_top = 404.44
 offset_right = 47.8234
@@ -532,6 +544,7 @@ item_name = "Antidote"
 item_description = "A bitter-tasting liquid that neutralizes poisons in the body. This antidote quickly removes the effects of toxins, allowing the user to recover from poisoning."
 
 [node name="recipes6" type="Label" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 88.8624
 offset_top = 419.047
 offset_right = 245.862
@@ -540,6 +553,7 @@ text = "="
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="lum_mush3" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 109.313
 offset_top = 404.44
 offset_right = 141.313
@@ -552,6 +566,7 @@ item_name = "Healing Herb"
 item_description = "Bright green leaves with small red healing berries, found in gardens and open fields"
 
 [node name="recipes7" type="Label" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 177.97
 offset_top = 419.047
 offset_right = 334.97
@@ -560,6 +575,7 @@ text = "+"
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="sunny_flower3" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 198.421
 offset_top = 404.44
 offset_right = 230.421
@@ -572,6 +588,7 @@ item_name = "Sunny Flower"
 item_description = "Yellow flower that follows the movement of the sun, reduces fevers and inflammations, located in mountains and sunny fields"
 
 [node name="recipes8" type="Label" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 267.323
 offset_top = 419.047
 offset_right = 424.323
@@ -580,6 +597,7 @@ text = "+"
 label_settings = SubResource("LabelSettings_cgpr6")
 
 [node name="sunny_flower4" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = 287.774
 offset_top = 404.44
 offset_right = 319.774
@@ -592,6 +610,7 @@ item_name = "Luminous Mushroom"
 item_description = "Blue mushroom that glows softly in the dark, purifies the body of diseases and can be collected in damp forests and caves"
 
 [node name="drag_object4" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = -11.9314
 offset_top = 213.176
 offset_right = 20.0686
@@ -605,6 +624,7 @@ item_description = "Needs \"Fever Heal Potion\". Characterized by high temperatu
 tooltip = false
 
 [node name="drag_object5" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = -11.9314
 offset_top = 297.901
 offset_right = 20.0686
@@ -618,6 +638,7 @@ item_description = "Needs \"Fever Heal Potion\". Characterized by high temperatu
 tooltip = false
 
 [node name="drag_object6" type="TextureRect" parent="RecipeBook"]
+layout_mode = 0
 offset_left = -11.9314
 offset_top = 387.008
 offset_right = 20.0686
