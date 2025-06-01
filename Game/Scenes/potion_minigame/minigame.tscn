@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://c7vpg7v7wmug7" path="res://Scenes/potion_minigame/slot.gd" id="6_se7hw"]
 [ext_resource type="Texture2D" uid="uid://bpcy0on011o0o" path="res://Scenes/potion_minigame/assets/sprite_sheet.png" id="7_cgpr6"]
 [ext_resource type="Script" uid="uid://d0jfibds7adtg" path="res://Scenes/potion_minigame/animated_sprite_2d.gd" id="7_up7r7"]
-[ext_resource type="Script" path="res://Scenes/potion_minigame/texture_button.gd" id="12_kij4a"]
+[ext_resource type="Script" uid="uid://cpj0g78wgl1rg" path="res://Scenes/potion_minigame/texture_button.gd" id="12_kij4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2sgh"]
 atlas = ExtResource("5_d0205")
@@ -391,8 +391,8 @@ scale = Vector2(1.94475, 1.92522)
 texture = SubResource("AtlasTexture_r2wsu")
 script = ExtResource("3_mqypi")
 item_id = "poisoning "
-item_name = "Needs \"Antidote\". Mild Poisoning"
-item_description = "Causes nausea, dizziness, and stomach pain, originating from the consumption of spoiled food or poisonous plants."
+item_name = "Mild Poisoning"
+item_description = "Needs \"Antidote\". Causes nausea, dizziness, and stomach pain, originating from the consumption of spoiled food or poisonous plants."
 
 [node name="drag_object3" type="TextureRect" parent="RecipeBook"]
 layout_mode = 0

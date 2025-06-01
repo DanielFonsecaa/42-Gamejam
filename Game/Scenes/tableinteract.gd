@@ -17,9 +17,14 @@ func _on_body_exited(body):
 
 func _input(event):
 	if player_nearby and event.is_action_pressed("interact"):
-		if first_time:
+		# Só abre se não houver minigame aberto
+		if not Inventory.minigame_aberto:
+			Inventory.minigame_aberto = true
 			var minigame = load("res://Scenes/potion_minigame/minigame.tscn").instantiate()
 			get_tree().current_scene.add_child(minigame)
 			
-		emit_signal("started")
-		first_time = true
+			# Liga um sinal para saber quando o minigame fecha
+			minigame.connect("tree_exited", Callable(self, "_on_minigame_fechado"))
+
+func _on_minigame_fechado():
+	Inventory.minigame_aberto = false

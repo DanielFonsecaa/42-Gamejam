@@ -7,7 +7,7 @@ signal closed
 
 var dialogue_lines := [
 	"Clients are coming in. Check their disease above their head.",
-	"Ater that, head up to your alchemy table 
+	"After that, head up to your alchemy table 
 	and create a potion for that disease!",
 	"(You can use 'E' to interact with the table!)"
 	]
