@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dymrjj3xxknob"]
+[gd_scene load_steps=21 format=3 uid="uid://dymrjj3xxknob"]
 
 [ext_resource type="Texture2D" uid="uid://cdrhohnrko3va" path="res://Assets/clients/MiniPeasant.png" id="1_nlhnc"]
 [ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_vjiyf"]
@@ -129,6 +129,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjiyf"]
+radius = 38.0
+
 [node name="Client" type="CharacterBody2D"]
 script = ExtResource("2_vjiyf")
 
@@ -143,3 +146,9 @@ scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="intereactArea" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1, 30)
+shape = SubResource("CircleShape2D_vjiyf")

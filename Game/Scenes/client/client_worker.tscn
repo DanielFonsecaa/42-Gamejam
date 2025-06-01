@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://e2y5x5bqsa1h"]
+[gd_scene load_steps=21 format=3 uid="uid://e2y5x5bqsa1h"]
 
 [ext_resource type="Texture2D" uid="uid://eu8e7ig5jcvj" path="res://Assets/clients/MiniWorker.png" id="1_rut6a"]
 [ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_fi3bx"]
@@ -129,6 +129,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fi3bx"]
+radius = 38.0
+
 [node name="Client" type="CharacterBody2D"]
 script = ExtResource("2_fi3bx")
 
@@ -143,3 +146,9 @@ scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"walk"
 autoplay = "idle"
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="intereactArea" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1, 30)
+shape = SubResource("CircleShape2D_fi3bx")
