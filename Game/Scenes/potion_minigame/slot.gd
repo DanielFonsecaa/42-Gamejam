@@ -1,5 +1,5 @@
 extends TextureRect
-
+signal closed
 @export_enum("Circle", "Square") var type = 0
 
 
@@ -68,5 +68,7 @@ func _check_recipe():
 func _on_recipe_completed(recipe_name):
 	print("Receita criada: %s" % recipe_name)
 	potion_item.visible = true
+	emit_signal("closed")
+	$"..".queue_free()
 	# Aqui pode adicionar lógica para mostrar feedback, criar o item, etc.
 	# dropped_items.clear()
