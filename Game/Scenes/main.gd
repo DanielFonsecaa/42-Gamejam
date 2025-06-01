@@ -1,6 +1,7 @@
 extends Node2D
 @onready var minigamestart = $Area2D
 @onready var arrow = $AnimatedSprite2D
+@onready var arrow2 = $AnimatedSprite2D2
 var flag = true
 var item_textures := {
 	1: preload("res://Scenes/potion_minigame/assets/potions/fever_potion.png") as Texture2D,
@@ -41,6 +42,7 @@ func _ready():
 	add_child(minigame)                                     # Adds it to the tree (important!)
 	var drag_object = minigame.get_node("Panel2/drag_object")
 	await get_tree().process_frame
+	arrow.visible = false
 	#drag_object.connect("gotpotion", Callable(self, "_on_got_potion"))
 	#await drag_object.gotpotion      
 					  
@@ -52,6 +54,7 @@ func _on_got_potion():
 	overlay3.set_anchors_preset(Control.PRESET_FULL_RECT)
 	overlay3.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	overlay3.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	arrow2.visible = true
 	await overlay3.closed
 	get_tree().paused = false
 	

@@ -294,6 +294,16 @@ animation = &"arrow"
 autoplay = "arrow"
 frame_progress = 0.875927
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(356, 261)
+scale = Vector2(0.205318, 0.205318)
+sprite_frames = SubResource("SpriteFrames_pqonn")
+animation = &"arrow"
+autoplay = "arrow"
+frame_progress = 0.875927
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(232, 138)
 collision_layer = 2
