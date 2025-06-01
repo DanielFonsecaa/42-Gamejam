@@ -91,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jekco")
 }],
-"loop": true,
+"loop": false,
 "name": &"die",
 "speed": 4.0
 }, {
@@ -162,6 +162,5 @@ shape = SubResource("CircleShape2D_k10ht")
 position = Vector2(0, -10)
 scale = Vector2(4.019, 4.019)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
-animation = &"lay_down"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 1.0
