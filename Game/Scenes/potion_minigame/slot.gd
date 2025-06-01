@@ -21,17 +21,20 @@ const itens = {
 	"healing_potion": {
 		"name": "Healing Potion",
 		"description": "A small vial filled with a shimmering red liquid. When consumed, it restores a moderate amount of health, quickly mending wounds and revitalizing the user.",
-		"region": Rect2(96, 0, 32, 32)
+		"region": Rect2(128, 0, 32, 32),
+		"id": 2,
 	},
 	"fever_heal_potion": {
 		"name": "Fever Healing Potion",
 		"description": "A cool, blue potion designed to reduce high fevers. Drinking it soothes the body, lowers temperature, and helps the user recover from fever-related ailments.",
-		"region": Rect2(128, 0, 32, 32)
+		"region": Rect2(96, 0, 32, 32),
+		"id": 1,
 	},
 	"antidote": {
 		"name": "Antidote",
 		"description": "A bitter-tasting liquid that neutralizes poisons in the body. This antidote quickly removes the effects of toxins, allowing the user to recover from poisoning.",
-		"region": Rect2(160, 0, 32, 32)
+		"region": Rect2(160, 0, 32, 32),
+		"id": 3,
 	}
 }
 
@@ -70,7 +73,7 @@ func _on_recipe_completed(recipe_name):
 	potion_item.item_id = recipe_name
 	potion_item.item_name = itens[recipe_name]["name"]
 	potion_item.item_description = itens[recipe_name]["description"]
-	
+	Inventory.add_name_item(itens[recipe_name]["id"])
 	var atlas_base = preload("res://Scenes/potion_minigame/assets/sprite_sheet.png") # Substitua pelo caminho correto
 	var atlas_tex = AtlasTexture.new()
 	atlas_tex.atlas = atlas_base

@@ -5,7 +5,7 @@ var bed_position: Vector2
 var assigned_bed: Node2D = null
 var reached_bed: bool = false
 var healed: bool = false
-var sickness_name: String = ""
+var sickness_id: int = 0
 var moving_to_exit: bool = false
 var end_pos: Vector2 = Vector2(70, 400)
 var player_in_range: bool = false
@@ -13,9 +13,9 @@ var sickness_icon: Node = null
 var healthy_animation_scene: PackedScene = null
 
 var sickness_to_texture := {
-	"fever": preload("res://Scenes/potion_minigame/assets/potions/fever_potion.png"),
-	"poison": preload("res://Scenes/potion_minigame/assets/potions/simple_antidote.png"),
-	"injure": preload("res://Scenes/potion_minigame/assets/potions/healing_potion.png")
+	1: preload("res://Scenes/potion_minigame/assets/potions/fever_potion.png"),
+	3: preload("res://Scenes/potion_minigame/assets/potions/simple_antidote.png"),
+	2: preload("res://Scenes/potion_minigame/assets/potions/healing_potion.png")
 }
 
 func _ready():
@@ -24,17 +24,17 @@ func _ready():
 	$InteractionArea.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "Player":
+	if body.name == "PlayerBody":
 		player_in_range = true
 
 func _on_body_exited(body):
-	if body.name == "Player":
+	if body.name == "PlayerBody":
 		player_in_range = false
 
 func _process(delta):
 	if player_in_range and Input.is_action_just_pressed("interact") and not healed:
 		try_heal()
-	
+		print("test tryheal")
 	if bed_position and not reached_bed:
 		var direction = (bed_position - position).normalized()
 		position += direction * speed * delta
@@ -45,20 +45,19 @@ func _process(delta):
 		position += direction * speed * delta
 		if position.distance_to(end_pos) < 5:
 			moving_to_exit = false
-
 func try_heal():
-	var current_item = Inventory.current_item
-	if current_item == null:
+	var current_id = Inventory.potion_id
+	if current_id == null:
 		print("❌ No potion selected.")
 		return
-
-	if sickness_to_texture.has(sickness_name):
-		var correct_texture = sickness_to_texture[sickness_name]
-		if current_item == correct_texture:
+	print("current item")
+	print(current_id)
+	if sickness_to_texture.has(sickness_id) and Inventory.item_count >= 0:
+		if sickness_id == current_id:
 			print("✅ Correct potion! Healing client.")
-			Inventory.item_count -= 1
-			if Inventory.item_count <= 0:
-				Inventory.current_item = null
+			Inventory.item_count = -1
+			Inventory.current_item = null
+			Inventory.potion_id = -1
 			heal_client()
 		else:
 			print("❌ Wrong potion.")
@@ -106,7 +105,7 @@ func heal_client() -> void:
 	
 	if assigned_bed:
 		assigned_bed.release()
-	
+	queue_free()
 	if has_node("AnimationPlayer"):
 		$AnimationPlayer.play("get_up")
 	
