@@ -26,7 +26,7 @@ func _ready():
 	overlay.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	await overlay.closed
 	get_tree().paused = false
-	await get_tree().create_timer(13.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	var overlay2 = preload("res://Scenes/text_box/message_girl2.tscn").instantiate()
 	get_tree().root.add_child(overlay2)
 	get_tree().paused = true
@@ -47,6 +47,7 @@ func _ready():
 	#await drag_object.gotpotion      
 					  
 func _on_got_potion():
+	$Cauldron.play()
 	var overlay3 = preload("res://Scenes/text_box/message_girl3.tscn").instantiate()
 	get_tree().root.add_child(overlay3)
 	get_tree().paused = true

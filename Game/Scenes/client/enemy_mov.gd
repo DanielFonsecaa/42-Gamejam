@@ -59,10 +59,11 @@ func try_heal():
 			Inventory.current_item = null
 			Inventory.potion_id = -1
 			heal_client()
-		else:
+		elif sickness_id != current_id and current_id != -1:
 			print("❌ Wrong potion.")
-	else:
-		print("❌ Unknown sickness.")
+			get_tree().change_scene_to_file("res://Scenes/main_menu/game_over.tscn")
+		else:
+			print("❌ Unknown sickness.")
 
 func _reach_bed() -> void:
 	var offset = Vector2(0, 30)
