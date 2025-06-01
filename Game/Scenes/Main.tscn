@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://dvof82uktecf6" path="res://Scenes/main.gd" id="1_jw32o"]
-[ext_resource type="PackedScene" uid="uid://dujq0x8jpn77j" path="res://Scenes/player/Player.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://dujq0x8jpn77j" path="res://Scenes/client/player_test.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://dror2id2maed6" path="res://Scenes/enemy/enemy.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://d4lv22706f8uh" path="res://Scenes/beds/bed_02.tscn" id="4_jw32o"]
 [ext_resource type="PackedScene" uid="uid://df2d2tws0a2db" path="res://Scenes/beds/bed_01.tscn" id="4_v1gob"]
@@ -288,6 +288,16 @@ position = Vector2(466, 360)
 visible = false
 z_index = 1
 position = Vector2(231, 87)
+scale = Vector2(0.205318, 0.205318)
+sprite_frames = SubResource("SpriteFrames_pqonn")
+animation = &"arrow"
+autoplay = "arrow"
+frame_progress = 0.875927
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(356, 261)
 scale = Vector2(0.205318, 0.205318)
 sprite_frames = SubResource("SpriteFrames_pqonn")
 animation = &"arrow"
