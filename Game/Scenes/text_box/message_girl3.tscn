@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://diwmq4j1gjkon"]
+
+[ext_resource type="Script" uid="uid://8sm6w3skbphg" path="res://Scenes/text_box/message_girl_2.gd" id="1_s1e5r"]
+[ext_resource type="Texture2D" uid="uid://brxwcrk34ieng" path="res://Assets/paper_01.png" id="2_5snex"]
+[ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="3_n78e7"]
+[ext_resource type="Texture2D" uid="uid://m80l7wb513u5" path="res://Assets/text_girl.png" id="4_uxrqp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm7l2"]
+texture = ExtResource("2_5snex")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frjff"]
+atlas = ExtResource("4_uxrqp")
+region = Rect2(0, 0, 256, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fqj31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frjff")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Message" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -104.0
+offset_right = -563.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.932313, 0.932313)
+script = ExtResource("1_s1e5r")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 427.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cm7l2")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 255.0
+offset_top = 36.0
+offset_right = -89.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.576892, 0.323239, 0.129262, 1)
+theme_override_fonts/font = ExtResource("3_n78e7")
+theme_override_font_sizes/font_size = 35
+
+[node name="SpaceHint" type="Label" parent="Panel2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -22.0
+offset_right = -35.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.576892, 0.323239, 0.129262, 1)
+theme_override_fonts/font = ExtResource("3_n78e7")
+theme_override_font_sizes/font_size = 35
+text = "Press 'SPACE'"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(133, 484)
+scale = Vector2(1.00818, 0.923964)
+sprite_frames = SubResource("SpriteFrames_fqj31")
+frame_progress = 0.651114
