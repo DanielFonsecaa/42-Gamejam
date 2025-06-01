@@ -1,5 +1,5 @@
 extends TextureRect
-
+signal closed
 @export var item_id: String = ""
 @export var item_name: String = ""
 @export var item_description: String = ""
@@ -36,5 +36,7 @@ func _on_gui_input(event):
 
 func claim_potion():
 	# Coloque aqui a ação desejada ao usar a poção
+	# TODO: Add to inventory
 	print("Got potion!")
-	# Exemplo: remover o item, curar o personagem, etc.
+	emit_signal("closed")
+	$"../..".queue_free()

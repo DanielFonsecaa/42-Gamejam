@@ -1,5 +1,4 @@
 extends TextureRect
-
 @export_enum("Circle", "Square") var type = 0
 
 
@@ -22,17 +21,17 @@ const itens = {
 	"healing_potion": {
 		"name": "Poção de Vida",
 		"description": "Recupera 50 de HP.",
-		"region": Rect2(0, 0, 32, 32)
+		"region": Rect2(96, 0, 32, 32)
 	},
 	"fever_heal_potion": {
-		"name": "Espada Curta",
-		"description": "Uma espada básica.",
-		"region": Rect2(32, 0, 32, 32)
+		"name": "Fever",
+		"description": "Cura febre.",
+		"region": Rect2(128, 0, 32, 32)
 	},
 	"antidote": {
-		"name": "Espada Curta",
-		"description": "Uma espada básica.",
-		"region": Rect2(32, 0, 32, 32)
+		"name": "Antídoto",
+		"description": "Remove veneno.",
+		"region": Rect2(160, 0, 32, 32)
 	}
 }
 
@@ -68,5 +67,17 @@ func _check_recipe():
 func _on_recipe_completed(recipe_name):
 	print("Receita criada: %s" % recipe_name)
 	potion_item.visible = true
+	potion_item.item_id = recipe_name
+	potion_item.item_name = itens[recipe_name]["name"]
+	potion_item.item_description = itens[recipe_name]["description"]
+	
+	var atlas_base = preload("res://Scenes/potion_minigame/assets/sprite_sheet.png") # Substitua pelo caminho correto
+	var atlas_tex = AtlasTexture.new()
+	atlas_tex.atlas = atlas_base
+	atlas_tex.region = itens[recipe_name]["region"] # ou ["regiao"], conforme seu dicionário
+
+	# Atualiza a textura do TextureRect do item
+	potion_item.texture = atlas_tex
+	# TODO: Add logic of changing item things
 	# Aqui pode adicionar lógica para mostrar feedback, criar o item, etc.
 	# dropped_items.clear()

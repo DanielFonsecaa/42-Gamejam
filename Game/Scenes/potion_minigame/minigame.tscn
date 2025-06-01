@@ -117,10 +117,30 @@ animations = [{
 }]
 
 [node name="Control" type="Control"]
+z_index = 20
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -374.0
+offset_top = 10.0
+offset_right = -334.0
+offset_bottom = 50.0
+scale = Vector2(0.684566, 0.684566)
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -540.488
+offset_top = -130.009
+offset_right = -500.488
+offset_bottom = -90.0093
+scale = Vector2(62.5232, 26.2418)
+
+[node name="Panel6" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -540.488
+offset_top = -130.009
+offset_right = -500.488
+offset_bottom = -90.0097
+scale = Vector2(62.5232, 26.2418)
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
