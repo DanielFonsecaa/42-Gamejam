@@ -1,6 +1,6 @@
 extends CharacterBody2D  # Or Node2D if no physics
 @export var speed: float = 50.0
-
+signal client_died
 var bed_position: Vector2
 var assigned_bed: Node2D = null
 var reached_bed: bool = false
@@ -60,10 +60,10 @@ func try_heal():
 			Inventory.potion_id = -1
 			heal_client()
 		elif sickness_id != current_id and current_id != -1:
-			print("❌ Wrong potion.")
-			get_tree().change_scene_to_file("res://Scenes/main_menu/game_over.tscn")
-		else:
-			print("❌ Unknown sickness.")
+			print("💀 Wrong potion! Killing client and player.")
+			kill()
+	else:
+		print("❌ Unknown sickness.")
 
 func _reach_bed() -> void:
 	var offset = Vector2(0, 30)
@@ -111,3 +111,9 @@ func heal_client() -> void:
 		$AnimationPlayer.play("get_up")
 	
 	moving_to_exit = true
+@onready var animated_sprite = $AnimatedSprite2D
+func kill() -> void:
+	# Stop movement
+	velocity = Vector2.ZERO
+	animated_sprite.play("die")
+	Inventory.kill = true

@@ -37,12 +37,12 @@ func _ready():
 	get_tree().paused = false
 	arrow.visible = true
 	await minigamestart.started
+	arrow.visible = false
 	var minigame_scene = load("res://Scenes/potion_minigame/minigame.tscn")        # Loads the scene
 	var minigame = minigame_scene.instantiate()             # Instantiates the scene
 	add_child(minigame)                                     # Adds it to the tree (important!)
 	var drag_object = minigame.get_node("Panel2/drag_object")
 	await get_tree().process_frame
-	arrow.visible = false
 	#drag_object.connect("gotpotion", Callable(self, "_on_got_potion"))
 	#await drag_object.gotpotion      
 					  
@@ -50,14 +50,15 @@ func _on_got_potion():
 	$Cauldron.play()
 	var overlay3 = preload("res://Scenes/text_box/message_girl3.tscn").instantiate()
 	get_tree().root.add_child(overlay3)
+	arrow2.visible = true
 	get_tree().paused = true
 	overlay3.set_process_unhandled_input(true)
 	overlay3.set_anchors_preset(Control.PRESET_FULL_RECT)
 	overlay3.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	overlay3.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	arrow2.visible = true
 	await overlay3.closed
 	get_tree().paused = false
+
 	
 func add():
 	if Inventory.potion_id == 1:
@@ -80,3 +81,7 @@ func _process(delta: float) -> void:
 		Inventory.hasitem = false
 		flag = false
 	add()
+	if Inventory.kill:
+		await get_tree().create_timer(2.0).timeout
+		queue_free()
+		get_tree().quit()

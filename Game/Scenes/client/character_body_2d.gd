@@ -8,6 +8,13 @@ const JUMP_VELOCITY = -400.0
 
 var footstep_frames : Array = [2,5]
 
+func _process(delta: float) -> void:
+	if Inventory.kill:
+		velocity = Vector2.ZERO
+		animated_sprite.play("die")
+		await get_tree().create_timer(2.0).timeout
+		queue_free()
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	# if not is_on_floor():
