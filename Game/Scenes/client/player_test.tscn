@@ -143,18 +143,19 @@ radius = 3.0
 
 [node name="player_test" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
 z_index = 1
 position = Vector2(7, 0)
+collision_layer = 3
 script = ExtResource("1_x4iit")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerBody"]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.814741
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_k10ht")
