@@ -1,8 +1,9 @@
 extends TextureRect
 signal closed
-@export var item_id: String = " "
-@export var item_name: String = " "
-@export var item_description: String = " "
+signal nextstep
+@export var item_id: String = ""
+@export var item_name: String = ""
+@export var item_description: String = ""
 @export var is_potion: bool = false
 @export var draggable: bool = false
 @export var tooltip: bool = true
@@ -61,4 +62,5 @@ func claim_potion():
 	# TODO: Add to inventory
 	print("Got potion!")
 	emit_signal("closed")
+	emit_signal("nextstep")
 	$"../..".queue_free()

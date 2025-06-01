@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dujq0x8jpn77j"]
+[gd_scene load_steps=22 format=3 uid="uid://dujq0x8jpn77j"]
 
 [ext_resource type="Texture2D" uid="uid://dkrew8c7kys56" path="res://Assets/clients/MiniVillagerWoman.png" id="1_esj4f"]
 [ext_resource type="Script" uid="uid://c63ge2gsjsfd4" path="res://Scenes/client/character_body_2d.gd" id="1_x4iit"]
+[ext_resource type="AudioStream" uid="uid://y2kuawegyh56" path="res://SFX/step1.mp3" id="3_61pwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x4iit"]
 atlas = ExtResource("1_esj4f")
@@ -143,18 +144,27 @@ radius = 3.0
 
 [node name="player_test" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
 z_index = 1
 position = Vector2(7, 0)
+collision_layer = 3
 script = ExtResource("1_x4iit")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerBody"]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_6d8bu")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.814741
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_k10ht")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="PlayerBody"]
+unique_name_in_owner = true
+stream = ExtResource("3_61pwv")
+volume_db = -10.0
+pitch_scale = 1.2
+bus = &"Step"
+
+[connection signal="frame_changed" from="PlayerBody/AnimatedSprite2D" to="PlayerBody" method="_on_animated_sprite_2d_frame_changed"]

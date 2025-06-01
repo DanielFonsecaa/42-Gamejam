@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 BedManager="*res://Scenes/bedManager.gd"
 Inventory="*res://inventory.gd"
+Music="*res://Scenes/Music.tscn"
 
 [display]
 

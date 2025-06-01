@@ -1,8 +1,8 @@
-[gd_scene load_steps=68 format=3 uid="uid://66xuipyjq2a5"]
+[gd_scene load_steps=71 format=3 uid="uid://66xuipyjq2a5"]
 
 [ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://dvof82uktecf6" path="res://Scenes/main.gd" id="1_jw32o"]
-[ext_resource type="PackedScene" uid="uid://dujq0x8jpn77j" path="res://Scenes/client/player_test.tscn" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://dujq0x8jpn77j" path="res://Scenes/player/Player.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://dror2id2maed6" path="res://Scenes/enemy/enemy.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://d4lv22706f8uh" path="res://Scenes/beds/bed_02.tscn" id="4_jw32o"]
 [ext_resource type="PackedScene" uid="uid://df2d2tws0a2db" path="res://Scenes/beds/bed_01.tscn" id="4_v1gob"]
@@ -66,6 +66,8 @@
 [ext_resource type="Texture2D" uid="uid://dsth5b8gu5xd5" path="res://Assets/Arrows/Arrows/Red Arrow 1/File57.png" id="64_0y6do"]
 [ext_resource type="Texture2D" uid="uid://s30nvq70ph7r" path="res://Assets/Arrows/Arrows/Red Arrow 1/File58.png" id="65_28d8q"]
 [ext_resource type="Texture2D" uid="uid://ceurmk2ts0g8a" path="res://Assets/Arrows/Arrows/Red Arrow 1/File59.png" id="66_ljb7l"]
+[ext_resource type="Script" uid="uid://m20xmeplmbsv" path="res://Scenes/tableinteract.gd" id="67_yic5e"]
+[ext_resource type="PackedScene" uid="uid://bbvhvr0u7f3ly" path="res://Scenes/potion_minigame/minigame.tscn" id="68_ex7s8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqonn"]
 animations = [{
@@ -252,6 +254,9 @@ animations = [{
 "speed": 60.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4clwk"]
+size = Vector2(148, 102)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 7)
 script = ExtResource("1_jw32o")
@@ -289,3 +294,13 @@ sprite_frames = SubResource("SpriteFrames_pqonn")
 animation = &"arrow"
 autoplay = "arrow"
 frame_progress = 0.875927
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(232, 138)
+collision_layer = 2
+script = ExtResource("67_yic5e")
+scene_to_instantiate = ExtResource("68_ex7s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_4clwk")
