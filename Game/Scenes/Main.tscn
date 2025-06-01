@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://66xuipyjq2a5"]
+[gd_scene load_steps=71 format=3 uid="uid://66xuipyjq2a5"]
 
 [ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://dvof82uktecf6" path="res://Scenes/main.gd" id="1_jw32o"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://s30nvq70ph7r" path="res://Assets/Arrows/Arrows/Red Arrow 1/File58.png" id="65_28d8q"]
 [ext_resource type="Texture2D" uid="uid://ceurmk2ts0g8a" path="res://Assets/Arrows/Arrows/Red Arrow 1/File59.png" id="66_ljb7l"]
 [ext_resource type="Script" uid="uid://m20xmeplmbsv" path="res://Scenes/tableinteract.gd" id="67_yic5e"]
+[ext_resource type="AudioStream" uid="uid://dhnrgiusdhib7" path="res://SFX/cauldronbubble.mp3" id="68_yic5e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqonn"]
 animations = [{
@@ -312,3 +313,6 @@ script = ExtResource("67_yic5e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4, 4)
 shape = SubResource("RectangleShape2D_4clwk")
+
+[node name="Cauldron" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("68_yic5e")
