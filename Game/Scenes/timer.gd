@@ -2,7 +2,7 @@ extends Node2D
 
 var frame_count := 0
 var seconds_passed := 0
-onready var night_overlay := $NightOverlay
+@onready var night_overlay := $NightOverlay
 
 const CYCLE_DURATION = 300
 const NIGHT_START = 225

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ctcc63y4rdw"]
+
+[ext_resource type="Script" uid="uid://nu2ynm0vgjcg" path="res://inventory_slot.gd" id="1_0v82l"]
+
+[node name="InventorySlot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0v82l")
+
+[node name="ItemTexture" type="TextureRect" parent="."]
+z_index = 2
+offset_left = -372.0
+offset_top = 393.0
+offset_right = 12.0
+offset_bottom = 777.0
+scale = Vector2(0.182398, 0.182398)
+stretch_mode = 5
