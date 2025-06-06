@@ -10,10 +10,12 @@ var footstep_frames : Array = [2,5]
 
 func _process(delta: float) -> void:
 	if Inventory.kill:
-		velocity = Vector2.ZERO
 		animated_sprite.play("die")
 		await get_tree().create_timer(2.0).timeout
-		queue_free()
+		animated_sprite.play("idle")
+	if Inventory.restart:
+		animated_sprite.play("idle")
+		print("idle")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

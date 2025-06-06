@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 BedManager="*res://Scenes/bedManager.gd"
 Inventory="*res://inventory.gd"
 Music="*res://Scenes/Music.tscn"
+ChestGlobal="*res://chestGlobal.gd"
 
 [display]
 
@@ -27,6 +28,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 bes=""
+bau=""
 
 [input]
 

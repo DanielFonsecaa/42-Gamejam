@@ -23,18 +23,7 @@ func _process(delta: float) -> void:
 func _on_start_pressed() -> void:
 	$ButtonClick.play()
 	await $ButtonClick.finished
-	get_tree().change_scene_to_file(\"res://Scenes/text_box/Intro.tscn\")
-
-func _on_option_pressed() -> void:
-	$ButtonClick.play()
-	await $ButtonClick.finished
-	print(\"options pressed\")
-	var overlay4 = preload(\"res://Scenes/text_box/message_girl4.tscn\").instantiate()
-	get_tree().root.add_child(overlay4)
-	get_tree().paused = true
-	await overlay4.closed
-	get_tree().paused = false
-	
+	get_tree().change_scene_to_file(\"res://Scenes/Main2.tscn\")
 
 func _on_exit_pressed() -> void:
 	$ButtonClick.play()

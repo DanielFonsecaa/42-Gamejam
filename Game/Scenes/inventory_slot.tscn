@@ -9,6 +9,7 @@ script = ExtResource("1_0v82l")
 
 [node name="ItemTexture" type="TextureRect" parent="."]
 z_index = 2
+layout_mode = 0
 offset_left = -372.0
 offset_top = 393.0
 offset_right = 12.0
