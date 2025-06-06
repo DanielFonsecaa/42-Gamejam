@@ -91,4 +91,4 @@ frame_progress = 0.651114
 
 [node name="mumble" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_3lr0d")
-volume_db = -10.0
+volume_db = -3.0

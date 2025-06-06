@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Alchemist's Nook"
 run/main_scene="uid://d3od6tfbxasgi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="uid://mihpa5bjn1kg"
 
 [autoload]
 
