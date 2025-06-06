@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://66xuipyjq2a5"]
+[gd_scene load_steps=72 format=3 uid="uid://66xuipyjq2a5"]
 
 [ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://dvof82uktecf6" path="res://Scenes/main.gd" id="1_jw32o"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://df2d2tws0a2db" path="res://Scenes/beds/bed_01.tscn" id="4_v1gob"]
 [ext_resource type="PackedScene" uid="uid://r02fsqqewbqv" path="res://Scenes/beds/bed_03.tscn" id="5_50glp"]
 [ext_resource type="Texture2D" uid="uid://dqsb2pwm5kg5m" path="res://Assets/Arrows/Arrows/Red Arrow 1/File1.png" id="8_1bbis"]
+[ext_resource type="PackedScene" uid="uid://dbuvecq76vp7w" path="res://Scenes/chest/chest.tscn" id="8_ex7s8"]
 [ext_resource type="Texture2D" uid="uid://cm1ps34nit1oh" path="res://Assets/Arrows/Arrows/Red Arrow 1/File2.png" id="9_yn2g2"]
 [ext_resource type="Texture2D" uid="uid://cu0r7fjylwwhd" path="res://Assets/Arrows/Arrows/Red Arrow 1/File3.png" id="10_yic5e"]
 [ext_resource type="Texture2D" uid="uid://d0p0ocx0c1ei6" path="res://Assets/Arrows/Arrows/Red Arrow 1/File4.png" id="11_ex7s8"]
@@ -284,6 +285,9 @@ position = Vector2(374, 359)
 
 [node name="Bed03" parent="." instance=ExtResource("5_50glp")]
 position = Vector2(466, 360)
+
+[node name="Chest" parent="." instance=ExtResource("8_ex7s8")]
+position = Vector2(-142, 261)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
