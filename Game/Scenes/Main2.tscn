@@ -330,7 +330,7 @@ shape = SubResource("RectangleShape2D_4clwk")
 stream = ExtResource("69_eg0tw")
 
 [node name="Day-money" parent="." instance=ExtResource("70_asu2j")]
-position = Vector2(414, 4)
+position = Vector2(380, 4)
 
 [node name="sun_timer" parent="." instance=ExtResource("71_y1e20")]
-position = Vector2(480, 90)
+position = Vector2(485, 119)
