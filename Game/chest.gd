@@ -27,6 +27,10 @@ const itens = {
 	}
 }
 
+func _ready() -> void:
+	var found_chest = get_tree().get_nodes_in_group("bau")
+	ChestGlobal.chests = found_chest
+
 func pay(price: int) -> void:
 	my_money += price
 	print(my_money)

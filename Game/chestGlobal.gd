@@ -26,9 +26,6 @@ const itens = {
 		"price": 30,
 	}
 }
-func _ready():
-	chests = get_tree().get_nodes_in_group("bau")
-	print("Found chests:", chests.size())
 
 func pay(price: int) -> void:
 	my_money += price

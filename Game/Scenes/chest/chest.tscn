@@ -1,8 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbuvecq76vp7w"]
+[gd_scene load_steps=20 format=3 uid="uid://dbuvecq76vp7w"]
 
 [ext_resource type="Script" uid="uid://u4c4rvxfsedx" path="res://Scenes/chest/chest1.gd" id="1_0y1t1"]
 [ext_resource type="Texture2D" uid="uid://cr6dsfhfmxncj" path="res://Assets/Super_Retro_World_Interior_pack_week42/atlas_32x.png" id="1_jc25n"]
 [ext_resource type="Texture2D" uid="uid://bru0jo8vlhabg" path="res://Assets/Super_Retro_World_Interior_pack_week42/animation/chest_002.png" id="2_jmhqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0y1t1"]
+radius = 20.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jmhqy"]
 texture = ExtResource("1_jc25n")
@@ -2734,6 +2737,12 @@ animations = [{
 
 [node name="Chest" type="Node2D" groups=["bau"]]
 script = ExtResource("1_0y1t1")
+
+[node name="ChestInteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestInteractionArea"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_0y1t1")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 visible = false
