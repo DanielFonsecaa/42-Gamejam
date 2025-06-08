@@ -21,6 +21,7 @@ BedManager="*res://Scenes/bedManager.gd"
 Inventory="*res://inventory.gd"
 Music="*res://Scenes/Music.tscn"
 ChestGlobal="*res://chestGlobal.gd"
+Properties="*res://properties.gd"
 
 [display]
 
