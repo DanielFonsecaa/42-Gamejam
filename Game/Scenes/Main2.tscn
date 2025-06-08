@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://doewdsbtenb04"]
+[gd_scene load_steps=74 format=3 uid="uid://doewdsbtenb04"]
 
 [ext_resource type="Script" uid="uid://xvne86kkomho" path="res://Scenes/main_2.gd" id="1_m5c1v"]
 [ext_resource type="PackedScene" uid="uid://d1ncguv1sgbs1" path="res://Scenes/player/player_test.tscn" id="2_asu2j"]
@@ -69,6 +69,8 @@
 [ext_resource type="Texture2D" uid="uid://ceurmk2ts0g8a" path="res://Assets/Arrows/Arrows/Red Arrow 1/File59.png" id="67_jnd1p"]
 [ext_resource type="Script" uid="uid://m20xmeplmbsv" path="res://Scenes/tableinteract.gd" id="68_pd5sy"]
 [ext_resource type="AudioStream" uid="uid://dhnrgiusdhib7" path="res://SFX/cauldronbubble.mp3" id="69_eg0tw"]
+[ext_resource type="PackedScene" uid="uid://bl513a65cc221" path="res://Scenes/day-money/day-money.tscn" id="70_asu2j"]
+[ext_resource type="PackedScene" uid="uid://sxoq1ca6j37a" path="res://Scenes/clock.tscn" id="71_y1e20"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqonn"]
 animations = [{
@@ -326,3 +328,9 @@ shape = SubResource("RectangleShape2D_4clwk")
 
 [node name="Cauldron" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("69_eg0tw")
+
+[node name="Day-money" parent="." instance=ExtResource("70_asu2j")]
+position = Vector2(414, 4)
+
+[node name="sun_timer" parent="." instance=ExtResource("71_y1e20")]
+position = Vector2(480, 90)
