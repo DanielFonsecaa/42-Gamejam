@@ -289,6 +289,12 @@ position = Vector2(466, 360)
 [node name="Chest" parent="." instance=ExtResource("8_ex7s8")]
 position = Vector2(-142, 261)
 
+[node name="Chest2" parent="." instance=ExtResource("8_ex7s8")]
+position = Vector2(-89, 261)
+
+[node name="Chest3" parent="." instance=ExtResource("8_ex7s8")]
+position = Vector2(-31, 261)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = 1

@@ -12,6 +12,7 @@ var end_pos: Vector2 = Vector2(70, 400)
 var player_in_range: bool = false
 var sickness_icon: Node = null
 var healthy_animation_scene: PackedScene = null
+var payment_animation_scene: PackedScene = null
 var chest_position: Vector2
 var going_to_chest: bool = false
 var reached_chest: bool = false
@@ -40,6 +41,7 @@ func _on_body_exited(body):
 
 func go_to_chest(chest):
 	chest_node = chest
+	chest_node.occupy()
 	chest_position = chest.global_position + Vector2(0, -20)  # Offset to stand in front
 	going_to_chest = true
 	if has_node("AnimatedSprite2D"):
@@ -52,24 +54,6 @@ func _reach_chest():
 		$AnimatedSprite2D.play("idle")
 	velocity = Vector2.ZERO
 
-	# Payment logic based on sickness
-	match sickness_id:
-		1:
-			ChestGlobal.pay(ChestGlobal.fever_price)
-		2:
-			ChestGlobal.pay(ChestGlobal.injure_price)
-		3:
-			ChestGlobal.pay(ChestGlobal.poison_price)
-
-	# Release chest after payment
-	if chest_node:
-		chest_node.release()
-		ChestGlobal.process_chest_queue()
-
-	# Optional animation
-	if has_node("AnimationPlayer"):
-		$AnimationPlayer.play("pay")
-
 func go_to_chest_with_offset(chest, offset_pos):
 	chest_node = chest
 	chest_position = offset_pos
@@ -77,6 +61,34 @@ func go_to_chest_with_offset(chest, offset_pos):
 	reached_chest = false
 	if has_node("AnimatedSprite2D"):
 		$AnimatedSprite2D.play("walk")
+
+func pay():
+	var price = 0
+	match sickness_id:
+		1:
+			price = ChestGlobal.fever_price
+			ChestGlobal.pay(price)
+		2:
+			price = ChestGlobal.injure_price
+			ChestGlobal.pay(price)
+		3:
+			price = ChestGlobal.poison_price
+			ChestGlobal.pay(price)
+
+		# Release the chest
+	if chest_node:
+		chest_node.release()
+		ChestGlobal.process_chest_queue()
+		
+	if payment_animation_scene:
+		var payment_anim_instance = payment_animation_scene.instantiate()
+		add_child(payment_anim_instance)
+		payment_anim_instance.position = Vector2(-20, -20)  # Adjust as needed
+		# 🔽 Set the label text if it exists
+		if payment_anim_instance.has_node("PriceLabel"):
+			payment_anim_instance.get_node("PriceLabel").text = " $" + str(price)
+		await get_tree().create_timer(2.0).timeout
+		payment_anim_instance.queue_free()
 
 func _process(delta):
 	if player_in_range and Input.is_action_just_pressed("interact") and not healed:
@@ -94,12 +106,21 @@ func _process(delta):
 		if position.distance_to(chest_position) < 5:
 			_reach_chest()
 
-	if reached_chest and Input.is_action_just_pressed("interact"):
+	elif reached_chest and chest_node.is_player_in_range() and Input.is_action_just_pressed("interact"):
+	# Only allow payment once
+		if not moving_to_exit:
+			print("💰 Processing client payment at chest")
+			pay()
+			# Optional payment animation
+			if has_node("AnimationPlayer"):
+				$AnimationPlayer.play("pay")
+			moving_to_exit = true
+
+	elif moving_to_exit:
 		var direction = (end_pos - position).normalized()
 		position += direction * speed * delta
 		if position.distance_to(end_pos) < 5:
 			queue_free()
-
 func try_heal():
 	var current_id = Inventory.potion_id
 	if current_id == null:

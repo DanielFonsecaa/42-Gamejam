@@ -18,6 +18,7 @@ var sicknesses = {
 }
 var sickness_icon: Node = null
 var healthy_animation = preload("res://Scenes/sickness/healthy.tscn")
+var payment_animation = preload("res://Scenes/coins/coins.tscn")
 var sickness_id = null
 func _process(delta: float) -> void:
 	pass
@@ -25,9 +26,13 @@ func _ready() -> void:
 	call_deferred("_init_beds")
 	$Timer.timeout.connect(spawn_client)
 
+
 func _init_beds():
 	var found_beds = get_tree().get_nodes_in_group("bes")
 	BedManager.beds = found_beds
+	var chests = get_tree().get_nodes_in_group("bau")
+	ChestGlobal.chests = chests
+	print("Found chests:", chests.size())
 
 func spawn_client() -> void:
 	for bed in BedManager.beds:
@@ -53,5 +58,6 @@ func spawn_client() -> void:
 			client_instance.add_child(sickness_icon_instance)
 			client_instance.sickness_icon = sickness_icon_instance
 			client_instance.healthy_animation_scene = healthy_animation
+			client_instance.payment_animation_scene = payment_animation
 
 			return
