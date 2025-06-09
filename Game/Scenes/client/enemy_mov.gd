@@ -17,8 +17,9 @@ var chest_position: Vector2
 var going_to_chest: bool = false
 var reached_chest: bool = false
 var chest_node: Node = null
-
-
+@onready var life1 = $"../Life/heart1"
+@onready var life2 = $"../Life/heart2"
+@onready var life3 = $"../Life/heart3"
 
 var sickness_to_texture := {
 	1: preload("res://Scenes/potion_minigame/assets/potions/fever_potion.png"),
@@ -201,4 +202,17 @@ func kill() -> void:
 	# Stop movement
 	velocity = Vector2.ZERO
 	animated_sprite.play("die")
-	Inventory.kill = true
+	Properties.lifes -= 1
+	print("❤️ Lives left:", Properties.lifes)
+	match Properties.lifes:
+		2:
+			life3.play("lost")
+		1:
+			life2.play("lost")
+		0:
+			life1.play("lost")
+			Inventory.kill = true
+	await get_tree().create_timer(2.0).timeout
+	if assigned_bed:
+		assigned_bed.release()
+	queue_free()
