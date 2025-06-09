@@ -5360,6 +5360,7 @@ size = Vector2(81.0345, 38.9655)
 
 [node name="map" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(-2.99988, -2.99997)
 scale = Vector2(1.45, 1.45)
 
 [node name="Ground" type="TileMapLayer" parent="."]

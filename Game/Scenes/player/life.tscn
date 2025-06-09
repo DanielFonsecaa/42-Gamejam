@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvtoivovo821r"]
+
+[ext_resource type="Texture2D" uid="uid://bwywyeiwl15km" path="res://Scenes/player/Heart_red.png" id="1_6wgdh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npvl4"]
+atlas = ExtResource("1_6wgdh")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsjgq"]
+atlas = ExtResource("1_6wgdh")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ll74"]
+atlas = ExtResource("1_6wgdh")
+region = Rect2(0, 3072, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5i0o"]
+atlas = ExtResource("1_6wgdh")
+region = Rect2(1024, 3072, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnqag"]
+atlas = ExtResource("1_6wgdh")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6us6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npvl4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsjgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ll74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5i0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnqag")
+}],
+"loop": false,
+"name": &"lost",
+"speed": 5.0
+}]
+
+[node name="Life" type="Node2D"]
+
+[node name="heart1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-24, 7)
+scale = Vector2(0.0449219, 0.0449219)
+sprite_frames = SubResource("SpriteFrames_n6us6")
+autoplay = "default"
+speed_scale = 0.55
+
+[node name="heart2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 7)
+scale = Vector2(0.0449219, 0.0449219)
+sprite_frames = SubResource("SpriteFrames_n6us6")
+autoplay = "default"
+speed_scale = 0.55
+
+[node name="heart3" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, 7)
+scale = Vector2(0.0449219, 0.0449219)
+sprite_frames = SubResource("SpriteFrames_n6us6")
+autoplay = "default"
+speed_scale = 0.55

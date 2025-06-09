@@ -1,9 +1,10 @@
-[gd_scene load_steps=74 format=3 uid="uid://doewdsbtenb04"]
+[gd_scene load_steps=77 format=3 uid="uid://doewdsbtenb04"]
 
 [ext_resource type="Script" uid="uid://xvne86kkomho" path="res://Scenes/main_2.gd" id="1_m5c1v"]
 [ext_resource type="PackedScene" uid="uid://d1ncguv1sgbs1" path="res://Scenes/player/player_test.tscn" id="2_asu2j"]
 [ext_resource type="PackedScene" uid="uid://dror2id2maed6" path="res://Scenes/enemy/enemy.tscn" id="3_y1e20"]
 [ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="4_atay3"]
+[ext_resource type="PackedScene" uid="uid://54hjvreljo87" path="res://Scenes/day-money/door.tscn" id="5_2a82n"]
 [ext_resource type="PackedScene" uid="uid://df2d2tws0a2db" path="res://Scenes/beds/bed_01.tscn" id="5_x7dlk"]
 [ext_resource type="PackedScene" uid="uid://d4lv22706f8uh" path="res://Scenes/beds/bed_02.tscn" id="6_2a82n"]
 [ext_resource type="PackedScene" uid="uid://r02fsqqewbqv" path="res://Scenes/beds/bed_03.tscn" id="7_8875l"]
@@ -71,6 +72,8 @@
 [ext_resource type="AudioStream" uid="uid://dhnrgiusdhib7" path="res://SFX/cauldronbubble.mp3" id="69_eg0tw"]
 [ext_resource type="PackedScene" uid="uid://bl513a65cc221" path="res://Scenes/day-money/day-money.tscn" id="70_asu2j"]
 [ext_resource type="PackedScene" uid="uid://sxoq1ca6j37a" path="res://Scenes/clock.tscn" id="71_y1e20"]
+[ext_resource type="PackedScene" uid="uid://dsisg7hw70q68" path="res://Scenes/day-money/buy_item.tscn" id="72_atay3"]
+[ext_resource type="PackedScene" uid="uid://cvtoivovo821r" path="res://Scenes/player/life.tscn" id="74_2a82n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqonn"]
 animations = [{
@@ -278,6 +281,11 @@ z_index = 1
 position = Vector2(-189, 371)
 
 [node name="map" parent="." instance=ExtResource("4_atay3")]
+position = Vector2(-1, 1)
+
+[node name="Door" parent="." instance=ExtResource("5_2a82n")]
+position = Vector2(-178, 122)
+scale = Vector2(-1.21666, 1.03273)
 
 [node name="Bed01" parent="." instance=ExtResource("5_x7dlk")]
 position = Vector2(281, 359)
@@ -334,3 +342,9 @@ position = Vector2(380, 4)
 
 [node name="sun_timer" parent="." instance=ExtResource("71_y1e20")]
 position = Vector2(485, 119)
+
+[node name="BuyItem" parent="." instance=ExtResource("72_atay3")]
+position = Vector2(-411, 125)
+
+[node name="Life" parent="." instance=ExtResource("74_2a82n")]
+position = Vector2(-391, 441)

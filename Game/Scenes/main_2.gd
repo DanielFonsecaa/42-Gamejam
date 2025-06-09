@@ -48,6 +48,8 @@ func _process(delta: float) -> void:
 
 func restart():
 	if Inventory.restart:
-		var game_over = get_tree().change_scene_to_file("res://Scenes/main_menu/game_over.tscn")
 		Inventory.restart = false
 		restarted = true
+		Properties.lifes = 3
+		var game_over = get_tree().change_scene_to_file("res://Scenes/main_menu/game_over.tscn")
+		
