@@ -130,8 +130,7 @@ script = ExtResource("1_dg48a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kga5j")
-frame = 13
-frame_progress = 0.64021
+autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

@@ -12,20 +12,20 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("1_ld1n3")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = -105.0
-offset_top = -4.0
-offset_right = 113.0
-offset_bottom = 76.0
+offset_left = -111.0
+offset_top = -14.0
+offset_right = 158.0
+offset_bottom = 129.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_v0q2w")
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -69.0
-offset_right = 69.0
-offset_bottom = 34.0
+offset_left = -50.0
+offset_top = -1.42857
+offset_right = 88.0
+offset_bottom = 32.5714
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.991164, 0.991164, 0.991164, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -37,14 +37,30 @@ text = "Day 1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -77.0
-offset_top = 40.0
-offset_right = 77.0
-offset_bottom = 65.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 44.2857
+offset_right = 94.0
+offset_bottom = 69.2857
+grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ld1n3")
 theme_override_font_sizes/font_size = 24
 text = "Cash : 0"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -78.5714
+offset_top = 81.4286
+offset_right = 75.4286
+offset_bottom = 106.429
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ld1n3")
+theme_override_font_sizes/font_size = 24
+text = "Time: 05:00"
 metadata/_edit_use_anchors_ = true
