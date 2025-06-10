@@ -17,6 +17,7 @@ var chest_position: Vector2
 var going_to_chest: bool = false
 var reached_chest: bool = false
 var chest_node: Node = null
+var patience_bar = null
 @onready var life1 = $"../Life/heart1"
 @onready var life2 = $"../Life/heart2"
 @onready var life3 = $"../Life/heart3"
@@ -189,7 +190,8 @@ func heal_client() -> void:
 	
 	if assigned_bed:
 		assigned_bed.release()
-	
+	if patience_bar:
+		patience_bar.reset()
 	# Check if there is an available chest before leaving the bed
 	if ChestGlobal.get_available_chest():
 		print("✅ Chest available, queuing client")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5stvk8hhwsey"]
+
+[ext_resource type="Texture2D" uid="uid://bdh7o0nk7tae0" path="res://Assets/Pixel UI pack 3/05.png" id="1_0q58i"]
+[ext_resource type="Script" uid="uid://cvqidqxonbybj" path="res://Scenes/client/pacience_bar.gd" id="2_yujaq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yujaq"]
+atlas = ExtResource("1_0q58i")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7y2i"]
+atlas = ExtResource("1_0q58i")
+region = Rect2(48, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cni2o"]
+atlas = ExtResource("1_0q58i")
+region = Rect2(96, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgr3h"]
+atlas = ExtResource("1_0q58i")
+region = Rect2(144, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnymb"]
+atlas = ExtResource("1_0q58i")
+region = Rect2(192, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqrv5"]
+atlas = ExtResource("1_0q58i")
+region = Rect2(240, 16, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7irvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yujaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7y2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cni2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgr3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnymb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqrv5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pacience-bar" type="Node2D"]
+
+[node name="PatienceBar" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7irvy")
+script = ExtResource("2_yujaq")
