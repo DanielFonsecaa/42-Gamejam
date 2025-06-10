@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://66xuipyjq2a5"]
+[gd_scene load_steps=77 format=3 uid="uid://66xuipyjq2a5"]
 
 [ext_resource type="PackedScene" uid="uid://bnw25o33uej7w" path="res://Scenes/map.tscn" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://dvof82uktecf6" path="res://Scenes/main.gd" id="1_jw32o"]
@@ -73,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://bl513a65cc221" path="res://Scenes/day-money/day-money.tscn" id="70_4clwk"]
 [ext_resource type="PackedScene" uid="uid://sxoq1ca6j37a" path="res://Scenes/clock.tscn" id="71_h2tpa"]
 [ext_resource type="PackedScene" uid="uid://dsisg7hw70q68" path="res://Scenes/day-money/buy_item.tscn" id="73_as1io"]
+[ext_resource type="PackedScene" uid="uid://cvtoivovo821r" path="res://Scenes/player/life.tscn" id="74_as1io"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqonn"]
 animations = [{
@@ -343,3 +344,6 @@ position = Vector2(483, 118)
 
 [node name="BuyItem" parent="." instance=ExtResource("73_as1io")]
 position = Vector2(-414, 120)
+
+[node name="Life" parent="." instance=ExtResource("74_as1io")]
+position = Vector2(-393, 433)

@@ -347,4 +347,4 @@ position = Vector2(485, 119)
 position = Vector2(-411, 125)
 
 [node name="Life" parent="." instance=ExtResource("74_2a82n")]
-position = Vector2(-391, 441)
+position = Vector2(-391, 438)
