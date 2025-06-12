@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjkexvvll7wce"]
+[gd_scene load_steps=10 format=3 uid="uid://cjkexvvll7wce"]
 
 [ext_resource type="Texture2D" uid="uid://m80l7wb513u5" path="res://Assets/text_girl.png" id="1_oj7o3"]
 [ext_resource type="Texture2D" uid="uid://brxwcrk34ieng" path="res://Assets/paper_01.png" id="1_whuwa"]
 [ext_resource type="FontFile" uid="uid://bhlyqheoi2kgc" path="res://Assets/fonts/Jersey15-Regular.ttf" id="2_v8eyq"]
 [ext_resource type="Script" uid="uid://dc8u2666j4ih4" path="res://Scenes/text_box/label.gd" id="3_v8eyq"]
 [ext_resource type="AudioStream" uid="uid://b4mg4c4yv2ia1" path="res://SFX/mumble.mp3" id="5_cm7l2"]
+[ext_resource type="AudioStream" uid="uid://8p7xmoojgcea" path="res://SFX/sfx-for-later/bender-mumble-daniel.mp3" id="6_frjff"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm7l2"]
 texture = ExtResource("1_whuwa")
@@ -92,3 +93,7 @@ frame_progress = 0.651114
 [node name="mumble" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_cm7l2")
 volume_db = -3.0
+
+[node name="Bender-mumble-daniel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_frjff")
+parameters/looping = true

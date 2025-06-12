@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bbvhvr0u7f3ly"]
+[gd_scene load_steps=50 format=3 uid="uid://bbvhvr0u7f3ly"]
 
 [ext_resource type="Script" uid="uid://etb2oixgd660" path="res://Scenes/potion_minigame/minigame.gd" id="1_q3k6b"]
 [ext_resource type="Texture2D" uid="uid://bpehbomwqkgkl" path="res://Assets/Complete_UI_Essential_Pack_Free/Sprites/Spritesheet_UI_Flat.png" id="2_7ha7c"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bpcy0on011o0o" path="res://Scenes/potion_minigame/assets/sprite_sheet.png" id="7_cgpr6"]
 [ext_resource type="Script" uid="uid://d0jfibds7adtg" path="res://Scenes/potion_minigame/animated_sprite_2d.gd" id="7_up7r7"]
 [ext_resource type="Script" uid="uid://cpj0g78wgl1rg" path="res://Scenes/potion_minigame/texture_button.gd" id="12_kij4a"]
+[ext_resource type="AudioStream" uid="uid://b1fb3bbwfdu6i" path="res://SFX/sfx-for-later/cauldron-bubbling-daniel.mp3" id="12_wkvpp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2sgh"]
 atlas = ExtResource("5_d0205")
@@ -677,6 +678,11 @@ scale = Vector2(0.560002, 0.560002)
 sprite_frames = SubResource("SpriteFrames_46emj")
 frame_progress = 0.887847
 script = ExtResource("7_up7r7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TextureRect/AnimatedSprite2D"]
+stream = ExtResource("12_wkvpp")
+volume_db = -12.076
+parameters/looping = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
