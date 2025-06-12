@@ -2,39 +2,67 @@ extends CharacterBody2D
 
 @onready var sound_thanks = $thanks
 @onready var sound_no_money = $no_money
-@onready var sound_receive = $receive
+@onready var sound_receive = $receive # (not used in your current logic)
 @onready var sound_what_ya_buy = $what_ya_buy
 @onready var sound_bye = $bye
 
-var sounds = []
-var sound_index = 0
-var player_in_range = false
+var scroll_shop_instance = null
 
 func _ready():
-	sounds = [
-		sound_thanks,
-		sound_no_money,
-		sound_receive,
-		sound_what_ya_buy,
-		sound_bye
-	]
-	$BuyArea.body_entered.connect(_on_body_entered)
-	$BuyArea.body_exited.connect(_on_body_exited)
+	$BuyArea.body_entered.connect(_on_BuyArea_body_entered)
+	$BuyArea.body_exited.connect(_on_BuyArea_body_exited)
 
-func _on_body_entered(body):
+func _on_BuyArea_body_entered(body):
 	if body.name == "PlayerBody":
-		player_in_range = true
+		open_scroll_shop()
+		play_what_ya_buy()
 
-func _on_body_exited(body):
+func _on_BuyArea_body_exited(body):
 	if body.name == "PlayerBody":
-		player_in_range = false
+		close_scroll_shop()
+		play_bye()
 
-func _input(event):
-	if player_in_range and event.is_action_pressed("interact"):
-		play_next_sound()
+func open_scroll_shop():
+	if scroll_shop_instance == null:
+		var ScrollShopScene = preload("res://Scenes/scroll/scroll-shop.tscn")
+		scroll_shop_instance = ScrollShopScene.instantiate()
+		# Connect purchase signals so the seller can react
+		scroll_shop_instance.buy_item.connect(on_buy_item)
+		scroll_shop_instance.no_money.connect(on_no_money)
+		get_tree().current_scene.add_child(scroll_shop_instance)
 
-func play_next_sound():
-	for s in sounds:
-		s.stop()
-	sounds[sound_index].play()
-	sound_index = (sound_index + 1) % sounds.size()
+func close_scroll_shop():
+	if scroll_shop_instance != null:
+		scroll_shop_instance.queue_free()
+		scroll_shop_instance = null
+
+# --- SOUND FUNCTIONS ---
+func play_what_ya_buy():
+	stop_all_sounds()
+	sound_what_ya_buy.play()
+
+func play_thanks():
+	stop_all_sounds()
+	sound_thanks.play()
+
+func play_no_money():
+	stop_all_sounds()
+	sound_no_money.play()
+
+func play_bye():
+	stop_all_sounds()
+	sound_bye.play()
+
+func stop_all_sounds():
+	sound_thanks.stop()
+	sound_no_money.stop()
+	sound_receive.stop()
+	sound_what_ya_buy.stop()
+	sound_bye.stop()
+
+# --- SIGNAL CALLBACKS FROM SHOP ---
+func on_buy_item():
+	play_thanks()
+
+func on_no_money():
+	play_no_money()
