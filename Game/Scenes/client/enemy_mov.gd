@@ -1,6 +1,7 @@
 extends CharacterBody2D  # Or Node2D if no physics
 @export var speed: float = 50.0
 @onready var animated_sprite = $AnimatedSprite2D
+
 signal client_died
 var bed_position: Vector2
 var assigned_bed: Node2D = null
@@ -21,6 +22,9 @@ var patience_bar = null
 @onready var life1 = $"../Life/heart1"
 @onready var life2 = $"../Life/heart2"
 @onready var life3 = $"../Life/heart3"
+@onready var sound_heal = get_node("heal_sound")
+@onready var sound_die = get_node("die_sound")
+@onready var sound_pay = get_node("pay_sound")
 
 var sickness_to_texture := {
 	1: preload("res://Scenes/potion_minigame/assets/potions/fever_potion.png"),
@@ -32,7 +36,9 @@ func _ready():
 	add_to_group("clients")
 	$InteractionArea.body_entered.connect(_on_body_entered)
 	$InteractionArea.body_exited.connect(_on_body_exited)
-
+	print("sound_heal: ", sound_heal)
+	print("sound_die: ", sound_die)
+	print("sound_pay: ", sound_pay)
 func _on_body_entered(body):
 	if body.name == "PlayerBody":
 		player_in_range = true
@@ -65,6 +71,7 @@ func go_to_chest_with_offset(chest, offset_pos):
 		$AnimatedSprite2D.play("walk")
 
 func pay():
+	sound_pay.play()
 	var price = 0
 	match sickness_id:
 		1:
@@ -165,6 +172,10 @@ func _reach_bed() -> void:
 
 func heal_client() -> void:
 	# Remove sickness icon if it exists
+	if sound_heal:
+		sound_heal.play()
+	else:
+		print("sound_heal is null!")
 	if sickness_icon and sickness_icon.is_inside_tree():
 		sickness_icon.queue_free()
 		sickness_icon = null
@@ -202,6 +213,7 @@ func heal_client() -> void:
 	#moving_to_exit = true
 func kill() -> void:
 	# Stop movement
+	sound_die.play()
 	velocity = Vector2.ZERO
 	animated_sprite.play("die")
 	Properties.lifes -= 1

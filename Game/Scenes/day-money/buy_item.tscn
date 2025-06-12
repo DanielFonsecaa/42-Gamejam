@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://dsisg7hw70q68"]
+[gd_scene load_steps=12 format=4 uid="uid://dsisg7hw70q68"]
 
 [ext_resource type="Texture2D" uid="uid://cr6dsfhfmxncj" path="res://Assets/Super_Retro_World_Interior_pack_week42/atlas_32x.png" id="1_w7lqh"]
 [ext_resource type="PackedScene" uid="uid://qa06cj1yhq8f" path="res://Scenes/client/client_noble.tscn" id="2_uehst"]
+[ext_resource type="Script" uid="uid://cngdl54617elv" path="res://Scenes/client/seller.gd" id="3_2v4we"]
+[ext_resource type="AudioStream" uid="uid://b025b1q28show" path="res://SFX/sfx-for-later/come-back-anytime-re4-daniel.mp3" id="4_abq73"]
+[ext_resource type="AudioStream" uid="uid://brsos2y1m2bfq" path="res://SFX/sfx-for-later/thank-you-re4-daniel.mp3" id="4_j5cid"]
+[ext_resource type="AudioStream" uid="uid://gdrwvtewncxl" path="res://SFX/sfx-for-later/not-enough-cash-stranger-re4-daniel.mp3" id="5_j5cid"]
+[ext_resource type="AudioStream" uid="uid://ic465yhq35is" path="res://SFX/sfx-for-later/cash-register-fake-daniel.mp3" id="6_go451"]
+[ext_resource type="AudioStream" uid="uid://o64vrkd4ggu1" path="res://SFX/sfx-for-later/what-are-ya-buyin-re4-daniel.mp3" id="7_fcd62"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5gpq"]
 texture = ExtResource("1_w7lqh")
@@ -2663,15 +2669,32 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAD+/wAAAAA0AB8AAAD//wAAAAA1AB8AAAD+////AAA0AB4AAAD/////AAA1AB4AAAAAAP//AAA2ABoAAAAAAAAAAAA2ABsAAAAAAAEAAAA2ABwAAAD+/wIAAAA0AB4AAAD+/wMAAAA0AB8AAAD//wMAAAA1AB8AAAD//wIAAAA1AB4AAAAAAAIAAAA2AB4AAAAAAAMAAAA2AB8AAAABAAMAAAA3AB8AAAABAAIAAAA3AB4AAAABAAEAAAA3ABwAAAABAAAAAAA3ABsAAAABAP//AAA3ABoAAAA=")
 tile_set = SubResource("TileSet_6rlfg")
 
-[node name="Client" parent="." instance=ExtResource("2_uehst")]
+[node name="Seller" parent="." instance=ExtResource("2_uehst")]
 position = Vector2(-21, -15)
+script = ExtResource("3_2v4we")
+
+[node name="thanks" type="AudioStreamPlayer2D" parent="Seller"]
+stream = ExtResource("4_j5cid")
+
+[node name="no_money" type="AudioStreamPlayer2D" parent="Seller"]
+stream = ExtResource("5_j5cid")
+
+[node name="receive" type="AudioStreamPlayer2D" parent="Seller"]
+stream = ExtResource("6_go451")
+
+[node name="what_ya_buy" type="AudioStreamPlayer2D" parent="Seller"]
+stream = ExtResource("7_fcd62")
+
+[node name="bye" type="AudioStreamPlayer2D" parent="Seller"]
+stream = ExtResource("4_abq73")
+
+[node name="BuyArea" type="Area2D" parent="Seller"]
+position = Vector2(21, 15)
+
+[node name="BuyCollision" type="CollisionShape2D" parent="Seller/BuyArea"]
+position = Vector2(-4, 17)
+shape = SubResource("CircleShape2D_w7lqh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAMAAAA3AB8AAAD//wIAAAA1AB4AAAD+/wIAAAA0AB4AAAAAAAMAAAA2AB8AAAAAAAIAAAA2AB4AAAABAAIAAAA3AB4AAAD//wMAAAA1AB8AAAD+/wMAAAA0AB8AAAA=")
 tile_set = SubResource("TileSet_6rlfg")
-
-[node name="BuyArea" type="Area2D" parent="."]
-
-[node name="BuyCollision" type="CollisionShape2D" parent="BuyArea"]
-position = Vector2(-4, 17)
-shape = SubResource("CircleShape2D_w7lqh")

@@ -1,7 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://djk1hb1wwoe2m"]
+[gd_scene load_steps=25 format=3 uid="uid://djk1hb1wwoe2m"]
 
 [ext_resource type="Texture2D" uid="uid://dos7mjrii3p7x" path="res://Assets/clients/MiniPrincess.png" id="1_s8bpe"]
 [ext_resource type="Script" uid="uid://dhur8ky2uobo4" path="res://Scenes/client/enemy_mov.gd" id="2_wc3ia"]
+[ext_resource type="AudioStream" uid="uid://slk4kdne45gd" path="res://SFX/sfx-for-later/heal-daniel.mp3" id="3_a8l1t"]
+[ext_resource type="AudioStream" uid="uid://lkot3uc0coiu" path="res://SFX/sfx-for-later/dying-guy-daniel.mp3" id="4_xurcg"]
+[ext_resource type="AudioStream" uid="uid://d32y3fnv6sttn" path="res://SFX/sfx-for-later/coin-receive-daniel.mp3" id="5_tvfx3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k10ht"]
 radius = 5.09902
@@ -159,3 +162,12 @@ autoplay = "idle"
 [node name="intereactArea" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-1, 30)
 shape = SubResource("CircleShape2D_wc3ia")
+
+[node name="heal_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a8l1t")
+
+[node name="die_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xurcg")
+
+[node name="pay_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tvfx3")
