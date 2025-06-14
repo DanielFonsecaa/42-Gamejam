@@ -1,12 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://3h6sekjwrbaw"]
+[gd_scene load_steps=11 format=3 uid="uid://3h6sekjwrbaw"]
 
 [ext_resource type="Texture2D" uid="uid://cbovit37qhbav" path="res://Assets/pngs/parts/paper.png" id="1_t8hvx"]
 [ext_resource type="Script" uid="uid://bcn6jwhv6uja2" path="res://Scenes/scroll/scroll_shop.gd" id="1_w4ypd"]
 [ext_resource type="FontFile" uid="uid://bh8jr51r6o3b5" path="res://Assets/fonts/8-BIT WONDER.TTF" id="2_dpok0"]
-[ext_resource type="Texture2D" uid="uid://dqmpxnpw5an6v" path="res://Assets/Prinbles_Buttons-HiTech-I (v 1.0) (9_6_2023)/png@4x/Square-Light/Tick-Default@4x.png" id="3_dpok0"]
+[ext_resource type="Texture2D" uid="uid://cxhuap4rctjya" path="res://Assets/Prinbles_Buttons-HiTech-I (v 1.0) (9_6_2023)/png/Square-Light/Tick-Hover.png" id="4_7cbhb"]
+[ext_resource type="Texture2D" uid="uid://vljv156ypb4c" path="res://Assets/Prinbles_Buttons-HiTech-I (v 1.0) (9_6_2023)/png/Square-Dark/Tick-Default.png" id="5_an68l"]
+[ext_resource type="Texture2D" uid="uid://imphh8gqd6sd" path="res://Assets/Prinbles_Buttons-HiTech-I (v 1.0) (9_6_2023)/png/Square-Light/Tick-Default.png" id="5_i1ept"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4ypd"]
 texture = ExtResource("1_t8hvx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_an68l"]
+texture = ExtResource("4_7cbhb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_duyhj"]
+texture = ExtResource("5_an68l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aonye"]
+texture = ExtResource("5_i1ept")
 
 [node name="Scroll-shop" type="Control"]
 layout_mode = 3
@@ -14,14 +25,19 @@ anchors_preset = 0
 script = ExtResource("1_w4ypd")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 743.0
-offset_bottom = 684.0
+top_level = true
+layout_mode = 0
+offset_left = -306.0
+offset_top = -35.0
+offset_right = 281.0
+offset_bottom = 512.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_w4ypd")
 
 [node name="Shop" type="Label" parent="Panel"]
-offset_left = 281.0
+layout_mode = 0
+offset_left = 205.0
 offset_top = 39.0
-offset_right = 425.0
+offset_right = 349.0
 offset_bottom = 83.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -31,10 +47,11 @@ theme_override_font_sizes/font_size = 32
 text = "SHOP"
 
 [node name="Patience" type="Label" parent="Panel"]
-offset_left = 58.0
-offset_top = 513.0
-offset_right = 298.0
-offset_bottom = 557.0
+layout_mode = 0
+offset_left = 34.0
+offset_top = 402.0
+offset_right = 274.0
+offset_bottom = 446.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -43,15 +60,17 @@ theme_override_font_sizes/font_size = 32
 text = "Patience"
 
 [node name="Button" type="Button" parent="Panel/Patience"]
+layout_mode = 0
 offset_left = 294.0
 offset_top = -4.99998
 offset_right = 526.0
 offset_bottom = 227.0
 scale = Vector2(0.225, 0.225)
-icon = ExtResource("3_dpok0")
-flat = true
+theme_override_styles/hover = SubResource("StyleBoxTexture_an68l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_duyhj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aonye")
 
-[node name="pat_price" type="Label" parent="Panel/Patience"]
+[node name="price" type="Label" parent="Panel/Patience"]
 layout_mode = 0
 offset_left = 368.0
 offset_right = 432.0
@@ -64,6 +83,7 @@ theme_override_font_sizes/font_size = 32
 text = "$ 10"
 
 [node name="Bed" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 306.0
 offset_right = 172.0
@@ -75,16 +95,8 @@ theme_override_fonts/font = ExtResource("2_dpok0")
 theme_override_font_sizes/font_size = 32
 text = "bed"
 
-[node name="Button" type="Button" parent="Panel/Bed"]
-offset_left = 163.0
-offset_top = -4.99998
-offset_right = 395.0
-offset_bottom = 227.0
-scale = Vector2(0.225, 0.225)
-icon = ExtResource("3_dpok0")
-flat = true
-
-[node name="bed_price" type="Label" parent="Panel/Bed"]
+[node name="price" type="Label" parent="Panel/Bed"]
+layout_mode = 0
 offset_left = 251.0
 offset_right = 349.0
 offset_bottom = 45.0
@@ -94,6 +106,16 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_dpok0")
 theme_override_font_sizes/font_size = 32
 text = "$ 10"
+
+[node name="Button" type="Button" parent="Panel/Bed"]
+offset_left = 158.0
+offset_top = -5.0
+offset_right = 390.0
+offset_bottom = 227.0
+scale = Vector2(0.225, 0.225)
+theme_override_styles/hover = SubResource("StyleBoxTexture_an68l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_duyhj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aonye")
 
 [node name="Life" type="Label" parent="Panel"]
 layout_mode = 0
@@ -108,17 +130,8 @@ theme_override_fonts/font = ExtResource("2_dpok0")
 theme_override_font_sizes/font_size = 32
 text = "Life"
 
-[node name="Button" type="Button" parent="Panel/Life"]
+[node name="price" type="Label" parent="Panel/Life"]
 layout_mode = 0
-offset_left = 163.0
-offset_top = -4.99998
-offset_right = 395.0
-offset_bottom = 227.0
-scale = Vector2(0.225, 0.225)
-icon = ExtResource("3_dpok0")
-flat = true
-
-[node name="life_price" type="Label" parent="Panel/Life"]
 offset_left = 249.0
 offset_right = 347.0
 offset_bottom = 45.0
@@ -128,3 +141,13 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_dpok0")
 theme_override_font_sizes/font_size = 32
 text = "$ 10"
+
+[node name="Button" type="Button" parent="Panel/Life"]
+offset_left = 158.0
+offset_top = -5.0
+offset_right = 390.0
+offset_bottom = 227.0
+scale = Vector2(0.225, 0.225)
+theme_override_styles/hover = SubResource("StyleBoxTexture_an68l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_duyhj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aonye")

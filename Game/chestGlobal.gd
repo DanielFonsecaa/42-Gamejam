@@ -2,9 +2,6 @@ extends Node
 
 var my_money = 0
 
-var life_price = 0
-var bed_price = 0
-var patiente_prive
 var fever_price = 20
 var injure_price = 10
 var poison_price = 30
@@ -31,15 +28,36 @@ const itens = {
 	}
 }
 
-func player_can_afford_life() -> bool:
-	return my_money >= life_price
+func player_can_afford(price) -> bool:
+	return my_money >= price
 
-func buy_life():
-	if player_can_afford_life():
-		my_money -= life_price
+func buy_life(price):
+	if player_can_afford(price):
+		my_money -= price
 		Properties.lifes += 1
 		# get_node("/root/OtherGlobalScript").lifes += 1
+		print(Properties.lifes)
 		return true
+	else:
+		print("no_money")
+	return false
+func buy_patience(price):
+	if player_can_afford(price):
+		my_money -= price
+		# get_node("/root/OtherGlobalScript").lifes += 1
+		print(my_money)
+		return true
+	else:
+		print("no_money")
+	return false
+func buy_bed(price):
+	if player_can_afford(price):
+		my_money -= price
+		# get_node("/root/OtherGlobalScript").lifes += 1
+		print(my_money)
+		return true
+	else:
+		print("no_money")
 	return false
 
 func pay(price: int) -> void:
